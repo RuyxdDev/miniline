@@ -29,7 +29,11 @@
 ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { font-size: 15px; scroll-behavior: smooth; }
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* prevent horizontal scroll globally */
+}
 
 body {
   background: var(--bg);
@@ -39,6 +43,8 @@ body {
   line-height: 1.8;
   letter-spacing: var(--ls-body);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 img { display: block; max-width: 100%; }
@@ -69,7 +75,7 @@ ul { list-style: none; }
    Announcement Bar
 ============================================================ */
 .announcement {
-  height: var(--announce-h);
+  min-height: var(--announce-h);
   background: var(--surface-dark);
   color: #e8e4de;
   display: flex;
@@ -79,6 +85,9 @@ ul { list-style: none; }
   font-weight: 400;
   letter-spacing: var(--ls-wide);
   text-transform: uppercase;
+  padding: 8px 16px;
+  text-align: center;
+  overflow: hidden;
 }
 
 /* ============================================================
@@ -171,17 +180,28 @@ ul { list-style: none; }
 .nav__burger {
   display: none;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
   cursor: pointer;
-  padding: 4px;
+  padding: 8px;
+  border: none;
+  background: none;
+  flex-shrink: 0;
 }
 .nav__burger span {
   display: block;
-  width: 22px;
-  height: 1px;
+  width: 24px;
+  height: 2px;
   background: var(--text-primary);
-  transition: var(--ease);
+  border-radius: 2px;
+  transition: transform var(--ease), opacity var(--ease);
+  transform-origin: center;
 }
+
+/* Burger → X animation */
+.nav__burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav__burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ============================================================
    Hero
@@ -426,7 +446,6 @@ ul { list-style: none; }
 
 .category {
   position: relative;
-  aspect-ratio: 3/4;
   overflow: hidden;
   background: var(--surface);
   cursor: pointer;
@@ -505,9 +524,8 @@ ul { list-style: none; }
 
 .product-card__image {
   position: relative;
-  aspect-ratio: 3/4;
-  background: var(--surface);
   overflow: hidden;
+  background: var(--surface);
 }
 
 .product-card--warm .product-card__image {
@@ -1036,14 +1054,15 @@ ul { list-style: none; }
   object-position: center 20%;
 }
 
-/* Category tiles — disable gradient ::before, use img */
+/* Category tiles */
 .category::before { content: none; }
 
+/* Normal-flow img — aspect-ratio on the img itself, not absolute positioning.
+   The .category__inner overlay (position:absolute) floats on top. */
 .category__img {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center top;
   transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1051,20 +1070,35 @@ ul { list-style: none; }
 
 .category:hover .category__img { transform: scale(1.06); }
 
-/* Product cards */
+/* Product cards — same pattern: img in normal flow, aspect-ratio on img */
+.product-card__image {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface); /* fallback while loading */
+}
+
+/* Override aspect-ratio set on the container — now controlled by the img */
+.product-card__image[style*="aspect-ratio"] { aspect-ratio: unset; }
+
+/* 4:5 variant for new arrivals section */
+.product-card__img--45 { aspect-ratio: 4 / 5; }
+
 .product-card__img {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center top;
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+/* Cards with custom aspect-ratio in HTML use inline style — inherit it on img */
+.product-card__image[style*="4/5"] .product-card__img,
+.product-card__image[style*="4 / 5"] .product-card__img { aspect-ratio: 4 / 5; }
+
 .product-card:hover .product-card__img { transform: scale(1.04); }
 
-/* Editorial */
+/* Editorial — keep absolute because it fills a grid row of unknown height */
 .editorial__img {
   position: absolute;
   inset: 0;
@@ -1092,33 +1126,72 @@ ul { list-style: none; }
 }
 
 @media (max-width: 860px) {
-  .header__inner { padding: 0 24px; }
+  .header__inner { padding: 0 20px; }
   .nav__links { display: none; }
   .nav__burger { display: flex; }
 
+  /* Hide Search & Account — keep only Cart on mobile header */
+  .nav__actions > a:not(:last-of-type) { display: none; }
+
   .categories { grid-template-columns: 1fr; }
-  .category { aspect-ratio: 16/9; }
+  /* Category images become landscape on mobile */
+  .category__img { aspect-ratio: 16 / 9; }
 
   .editorial { grid-template-columns: 1fr; }
-  .editorial__media { min-height: 360px; aspect-ratio: 4/3; }
-  .editorial__content { padding: 48px 40px; }
+  /* Give editorial media explicit min-height so absolute img has something to fill */
+  .editorial__media { min-height: 380px; }
+  .editorial__content { padding: 48px 32px; }
 
-  .section { padding: 56px 24px; }
-  .newsletter { padding: 56px 24px; }
-  .statement { padding: 72px 24px; }
-  .footer { padding: 56px 24px 36px; }
+  .section { padding: 56px 20px; }
+  .newsletter { padding: 56px 20px; }
+  .statement { padding: 72px 20px; }
+  .footer { padding: 56px 20px 36px; }
   .footer__top { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .banner__content { padding: 48px 24px; }
-  .hero__content { padding: 0 24px 40px; }
+  .banner__content { padding: 48px 20px; }
+  .hero__content { padding: 0 20px 40px; }
   .hero__meta { display: none; }
+
+  /* Quick-add always visible on touch — no hover available */
+  .product-card__quick-add {
+    opacity: 1;
+    transform: none;
+  }
+  .product-card__image-overlay { background: transparent !important; }
 }
 
 @media (max-width: 600px) {
-  :root { --header-h: 52px; }
-  .logo { font-size: 1.2rem; }
+  :root { --header-h: 52px; --announce-h: 32px; }
+
+  .announcement {
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    padding: 6px 12px;
+  }
+
+  .logo { font-size: 1.15rem; letter-spacing: 0.18em; }
+
+  .product-grid--4 { grid-template-columns: repeat(2, 1fr); }
   .product-grid--3 { grid-template-columns: repeat(2, 1fr); }
+
   .footer__top { grid-template-columns: 1fr; }
-  .footer__bottom { flex-direction: column; gap: 16px; text-align: center; }
-  .hero__season { display: none; }
-  .hero__title { font-size: 2.8rem; }
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+  .footer__legal { flex-wrap: wrap; justify-content: center; gap: 12px 16px; }
+
+  .hero__title { font-size: 2.6rem; }
+  .hero__cta-group { flex-direction: column; gap: 10px; }
+  .hero__cta-group .btn { text-align: center; }
+
+  .editorial__content { padding: 36px 20px; }
+  .section__header { flex-direction: column; gap: 12px; align-items: flex-start; }
+
+  .newsletter__title { font-size: 1.4rem; }
+  .newsletter__form { max-width: 100%; }
+
+  .banner__title { font-size: 2.4rem; }
+  .statement__quote { font-size: 1.4rem; }
 }
