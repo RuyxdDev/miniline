@@ -278,9 +278,9 @@
     <div class="product-grid product-grid--3">
 
       <div class="product-card">
-        <div class="product-card__image" style="aspect-ratio:4/5;">
+        <div class="product-card__image">
           <img
-            class="product-card__img"
+            class="product-card__img product-card__img--45"
             src="https://images.pexels.com/photos/3171641/pexels-photo-3171641.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1"
             alt="Кот Пздц Оверсайз"
             loading="lazy"
@@ -297,9 +297,9 @@
       </div>
 
       <div class="product-card">
-        <div class="product-card__image" style="aspect-ratio:4/5;">
+        <div class="product-card__image">
           <img
-            class="product-card__img"
+            class="product-card__img product-card__img--45"
             src="https://images.pexels.com/photos/9594088/pexels-photo-9594088.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1"
             alt="Длинное платье MINILINE кружево"
             loading="lazy"
@@ -316,9 +316,9 @@
       </div>
 
       <div class="product-card">
-        <div class="product-card__image" style="aspect-ratio:4/5;">
+        <div class="product-card__image">
           <img
-            class="product-card__img"
+            class="product-card__img product-card__img--45"
             src="https://images.pexels.com/photos/9594676/pexels-photo-9594676.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1"
             alt="Angel Варенка"
             loading="lazy"
@@ -435,13 +435,35 @@
       header.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
 
-    // Mobile nav
+    // Mobile nav + burger animation
     const burger    = document.getElementById('burgerBtn');
     const mobileNav = document.getElementById('mobileNav');
     const navClose  = document.getElementById('navClose');
 
-    burger.addEventListener('click', () => mobileNav.classList.add('open'));
-    navClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+    function openNav() {
+      mobileNav.classList.add('open');
+      burger.classList.add('open');
+      document.body.style.overflow = 'hidden'; // lock scroll when menu open
+    }
+
+    function closeNav() {
+      mobileNav.classList.remove('open');
+      burger.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    burger.addEventListener('click', openNav);
+    navClose.addEventListener('click', closeNav);
+
+    // Close on outside tap
+    mobileNav.addEventListener('click', (e) => {
+      if (e.target === mobileNav) closeNav();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeNav();
+    });
   </script>
 
 </body>
