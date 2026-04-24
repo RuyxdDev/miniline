@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>«But Why? Mountains» Оверсайз — MINILINE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<!-- WP: body_class() → woocommerce-page single-product -->
+<body>
+
+  <!-- WP: get_template_part('template-parts/header') -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <nav class="nav__links">
+        <a href="catalog.html">Каталог</a>
+        <a href="shop.html">Новинки</a>
+        <a href="delivery.html">О нас</a>
+        <a href="delivery.html">Размеры</a>
+      </nav>
+      <a href="index.html" class="logo">Miniline</a>
+      <div class="nav__actions">
+        <a href="#">Поиск</a>
+        <a href="account.html">Аккаунт</a>
+        <a href="cart.html">Корзина&thinsp;(0)</a>
+        <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="navClose">Закрыть</button>
+    <div class="mobile-nav__links">
+      <a href="catalog.html">Каталог</a>
+      <a href="shop.html">Новинки</a>
+      <a href="delivery.html">О нас</a>
+      <a href="delivery.html">Доставка</a>
+    </div>
+    <div class="mobile-nav__actions">
+      <a href="#">Поиск</a>
+      <a href="account.html">Аккаунт</a>
+      <a href="cart.html">Корзина (0)</a>
+    </div>
+  </nav>
+  <!-- /WP: header -->
+
+  <!-- WP: woocommerce_content() → single-product.php -->
+  <main class="woocommerce-page product-page">
+
+    <!-- WP: woocommerce_breadcrumb() -->
+    <nav class="breadcrumb" aria-label="Навигация">
+      <a href="index.html" class="breadcrumb__item">Главная</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="catalog.html" class="breadcrumb__item">Каталог</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="shop.html" class="breadcrumb__item">Унисекс</a>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__item breadcrumb__item--active">«But Why? Mountains»</span>
+    </nav>
+
+    <!-- WP: woocommerce_show_product_images() + woocommerce_single_product_summary() -->
+    <div class="product-single">
+
+      <!-- Gallery — WP: woocommerce_show_product_images() -->
+      <div class="product-gallery">
+        <div class="product-gallery__thumbs" id="galleryThumbs">
+          <button class="gallery-thumb gallery-thumb--active" data-src="https://images.pexels.com/photos/35587808/pexels-photo-35587808.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1">
+            <img src="https://images.pexels.com/photos/35587808/pexels-photo-35587808.jpeg?auto=compress&cs=tinysrgb&w=160&dpr=1" alt="Вид 1" loading="lazy">
+          </button>
+          <button class="gallery-thumb" data-src="https://images.pexels.com/photos/13644599/pexels-photo-13644599.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1">
+            <img src="https://images.pexels.com/photos/13644599/pexels-photo-13644599.jpeg?auto=compress&cs=tinysrgb&w=160&dpr=1" alt="Вид 2" loading="lazy">
+          </button>
+          <button class="gallery-thumb" data-src="https://images.pexels.com/photos/28996386/pexels-photo-28996386.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1">
+            <img src="https://images.pexels.com/photos/28996386/pexels-photo-28996386.jpeg?auto=compress&cs=tinysrgb&w=160&dpr=1" alt="Вид 3" loading="lazy">
+          </button>
+        </div>
+        <div class="product-gallery__main">
+          <img class="product-gallery__img" id="galleryMain"
+            src="https://images.pexels.com/photos/35587808/pexels-photo-35587808.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1"
+            alt="«But Why? Mountains» Оверсайз"
+            loading="eager"
+          >
+          <button class="product-gallery__wish" id="productWish" aria-label="В избранное">♡</button>
+        </div>
+      </div>
+
+      <!-- Summary — WP: woocommerce_single_product_summary() -->
+      <div class="product-summary">
+
+        <!-- WP: woocommerce_template_single_title() -->
+        <p class="product-summary__cat">Унисекс · Оверсайз</p>
+        <h1 class="product-summary__title">«But Why? Mountains» Оверсайз</h1>
+
+        <!-- WP: woocommerce_template_single_price() -->
+        <p class="product-summary__price">2 500 ₽</p>
+
+        <!-- WP: wc_get_product()->get_attributes() → pa_color -->
+        <div class="product-option">
+          <p class="product-option__label">Цвет: <strong>Чёрный</strong></p>
+          <div class="product-colors">
+            <button class="product-color product-color--active" style="--c:#1a1208" aria-label="Чёрный" title="Чёрный"></button>
+            <button class="product-color" style="--c:#fff; border:1.5px solid #ddd" aria-label="Белый" title="Белый"></button>
+          </div>
+        </div>
+
+        <!-- WP: wc_get_product()->get_attributes() → pa_size -->
+        <div class="product-option">
+          <p class="product-option__label">Размер: <strong id="selectedSize">—</strong></p>
+          <div class="product-sizes">
+            <button class="product-size" data-size="XS">XS</button>
+            <button class="product-size" data-size="S">S</button>
+            <button class="product-size" data-size="M">M</button>
+            <button class="product-size" data-size="L">L</button>
+            <button class="product-size product-size--out" data-size="XL" disabled>XL</button>
+            <button class="product-size" data-size="XXL">XXL</button>
+          </div>
+          <a href="delivery.html" class="product-size-guide">Таблица размеров →</a>
+        </div>
+
+        <!-- WP: woocommerce_template_single_add_to_cart() -->
+        <form class="product-buy" id="addToCartForm" action="cart.html">
+          <div class="product-qty">
+            <button type="button" class="product-qty__btn" id="qtyMinus" aria-label="Уменьшить">−</button>
+            <input class="product-qty__input" type="number" id="qtyInput" name="quantity" value="1" min="1" max="99" readonly>
+            <button type="button" class="product-qty__btn" id="qtyPlus" aria-label="Увеличить">+</button>
+          </div>
+          <button type="submit" class="btn btn--dark product-buy__submit">В корзину</button>
+        </form>
+
+        <!-- WP: woocommerce_template_single_meta() -->
+        <div class="product-meta">
+          <p class="product-meta__item">
+            <span class="product-meta__key">Артикул:</span>
+            <span class="product-meta__val">ML-OVR-001</span>
+          </p>
+          <p class="product-meta__item">
+            <span class="product-meta__key">Категория:</span>
+            <a href="shop.html?cat=unisex" class="product-meta__val product-meta__link">Унисекс</a>
+          </p>
+        </div>
+
+        <!-- WP: woocommerce_product_tab_panels() simplified -->
+        <div class="product-tabs">
+          <div class="product-tabs__nav">
+            <button class="product-tab-btn product-tab-btn--active" data-tab="desc">Описание</button>
+            <button class="product-tab-btn" data-tab="care">Уход</button>
+            <button class="product-tab-btn" data-tab="delivery">Доставка</button>
+          </div>
+          <div class="product-tab-panel" id="tab-desc">
+            <p>Оверсайз-футболка с оригинальным принтом «But Why? Mountains» из коллекции MINILINE. 100% хлопок (плотность 220 г/м²). Свободный крой, удлинённая спинка, дроп-шоулдер.</p>
+          </div>
+          <div class="product-tab-panel" id="tab-care" hidden>
+            <p>Стирка при 30°C, деликатный режим. Не отбеливать. Сушить в расправленном виде. Гладить через ткань при низкой температуре.</p>
+          </div>
+          <div class="product-tab-panel" id="tab-delivery" hidden>
+            <p>Доставка по России 3–7 дней. Самовывоз в Краснодаре. Бесплатная доставка от 3 500 ₽. Возврат в течение 14 дней. <a href="delivery.html" class="product-meta__link">Подробнее →</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- WP: woocommerce_output_related_products() -->
+    <div class="section" style="padding-top: 80px;">
+      <div class="section__header">
+        <span class="section__title">С этим носят</span>
+        <a href="shop.html" class="section__link">Смотреть все</a>
+      </div>
+      <div class="product-grid product-grid--4">
+        <div class="product-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/13644599/pexels-photo-13644599.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Топ базовый" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">Топ Miniline — базовый</p>
+            <p class="product-card__sub">Чёрный меланж</p>
+            <p class="product-card__price">1 800 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/2695854/pexels-photo-2695854.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Meow Blessed" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">«Meow Blessed» Оверсайз</p>
+            <p class="product-card__sub">Белый / Принт</p>
+            <p class="product-card__price">2 500 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/3171641/pexels-photo-3171641.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Кот Пздц" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">«Кот Пздц» Оверсайз</p>
+            <p class="product-card__sub">Экрю</p>
+            <p class="product-card__price">2 500 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/9594676/pexels-photo-9594676.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Angel Варенка" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">Angel — Варенка</p>
+            <p class="product-card__sub">Чёрный</p>
+            <p class="product-card__price">2 200 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <!-- /WP: woocommerce_content -->
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <p class="footer__brand-name">Miniline</p>
+        <p class="footer__brand-desc">Авторская одежда с графическими принтами из Краснодара.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/miniline_shop/" class="footer__social" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://t.me/miniline_shop" class="footer__social" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://vk.com/miniline_shop" class="footer__social" target="_blank" rel="noopener">ВКонтакте</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Магазин</p>
+        <ul class="footer__col-links">
+          <li><a href="shop.html">Все товары</a></li>
+          <li><a href="shop.html?cat=unisex">Унисекс</a></li>
+          <li><a href="shop.html?cat=women">Женское</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Помощь</p>
+        <ul class="footer__col-links">
+          <li><a href="delivery.html">Доставка и возврат</a></li>
+          <li><a href="delivery.html">Размерная таблица</a></li>
+          <li><a href="mailto:mini-line@mail.ru">mini-line@mail.ru</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Аккаунт</p>
+        <ul class="footer__col-links">
+          <li><a href="account.html">Войти</a></li>
+          <li><a href="cart.html">Корзина</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 MINILINE. Все права защищены.</span>
+      <div class="footer__legal">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Публичная оферта</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

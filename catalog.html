@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — MINILINE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<!-- WP: body_class() → woocommerce-page page-catalog -->
+<body>
+
+  <!-- WP: get_template_part('template-parts/header') -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <nav class="nav__links">
+        <a href="catalog.html">Каталог</a>
+        <a href="shop.html">Новинки</a>
+        <a href="delivery.html">О нас</a>
+        <a href="delivery.html">Размеры</a>
+      </nav>
+      <a href="index.html" class="logo">Miniline</a>
+      <div class="nav__actions">
+        <a href="#">Поиск</a>
+        <a href="account.html">Аккаунт</a>
+        <a href="cart.html">Корзина&thinsp;(0)</a>
+        <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="navClose">Закрыть</button>
+    <div class="mobile-nav__links">
+      <a href="catalog.html">Каталог</a>
+      <a href="shop.html">Новинки</a>
+      <a href="delivery.html">О нас</a>
+      <a href="delivery.html">Размеры</a>
+      <a href="delivery.html">Доставка</a>
+    </div>
+    <div class="mobile-nav__actions">
+      <a href="#">Поиск</a>
+      <a href="account.html">Аккаунт</a>
+      <a href="cart.html">Корзина (0)</a>
+    </div>
+  </nav>
+  <!-- /WP: header -->
+
+  <!-- WP: the_content() / page template -->
+  <main class="catalog-page">
+
+    <!-- Breadcrumb — WP: woocommerce_breadcrumb() -->
+    <nav class="breadcrumb" aria-label="Навигация">
+      <a href="index.html" class="breadcrumb__item">Главная</a>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__item breadcrumb__item--active">Каталог</span>
+    </nav>
+
+    <div class="catalog-hero">
+      <p class="catalog-hero__label">Весна / Лето 2026</p>
+      <h1 class="catalog-hero__title">Каталог</h1>
+      <p class="catalog-hero__sub">Выберите раздел</p>
+    </div>
+
+    <!-- WP: product categories loop (wc_get_product_categories) -->
+    <div class="catalog-cats">
+
+      <a href="shop.html?cat=unisex" class="catalog-cat">
+        <img
+          class="catalog-cat__img"
+          src="https://images.pexels.com/photos/12301327/pexels-photo-12301327.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1"
+          alt="Унисекс"
+          loading="lazy"
+        >
+        <div class="catalog-cat__inner">
+          <div>
+            <span class="catalog-cat__name">Унисекс</span>
+            <span class="catalog-cat__count">18 товаров</span>
+          </div>
+          <span class="catalog-cat__arrow">→</span>
+        </div>
+      </a>
+
+      <a href="shop.html?cat=women" class="catalog-cat">
+        <img
+          class="catalog-cat__img"
+          src="https://images.pexels.com/photos/24287022/pexels-photo-24287022.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1"
+          alt="Женское"
+          loading="lazy"
+        >
+        <div class="catalog-cat__inner">
+          <div>
+            <span class="catalog-cat__name">Женское</span>
+            <span class="catalog-cat__count">24 товара</span>
+          </div>
+          <span class="catalog-cat__arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+
+  </main>
+  <!-- /WP: content -->
+
+  <!-- WP: get_template_part('template-parts/footer') -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <p class="footer__brand-name">Miniline</p>
+        <p class="footer__brand-desc">Авторская одежда с графическими принтами из Краснодара.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/miniline_shop/" class="footer__social" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://t.me/miniline_shop" class="footer__social" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://vk.com/miniline_shop" class="footer__social" target="_blank" rel="noopener">ВКонтакте</a>
+          <a href="https://tiktok.com/@miniline_shop" class="footer__social" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Магазин</p>
+        <ul class="footer__col-links">
+          <li><a href="shop.html">Все товары</a></li>
+          <li><a href="shop.html?cat=unisex">Унисекс</a></li>
+          <li><a href="shop.html?cat=women">Женское</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Помощь</p>
+        <ul class="footer__col-links">
+          <li><a href="delivery.html">Доставка и возврат</a></li>
+          <li><a href="delivery.html">Размерная таблица</a></li>
+          <li><a href="mailto:mini-line@mail.ru">mini-line@mail.ru</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Аккаунт</p>
+        <ul class="footer__col-links">
+          <li><a href="account.html">Войти</a></li>
+          <li><a href="cart.html">Корзина</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 MINILINE. Все права защищены.</span>
+      <div class="footer__legal">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Публичная оферта</a>
+      </div>
+    </div>
+  </footer>
+  <!-- /WP: footer -->
+
+  <script src="scripts.js"></script>
+</body>
+</html>

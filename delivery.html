@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Доставка и возврат — MINILINE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<!-- WP: body_class() → page page-delivery -->
+<body>
+
+  <header class="header" id="header">
+    <div class="header__inner">
+      <nav class="nav__links">
+        <a href="catalog.html">Каталог</a>
+        <a href="shop.html">Новинки</a>
+        <a href="delivery.html" style="color:var(--text-primary)">О нас</a>
+        <a href="delivery.html">Размеры</a>
+      </nav>
+      <a href="index.html" class="logo">Miniline</a>
+      <div class="nav__actions">
+        <a href="#">Поиск</a>
+        <a href="account.html">Аккаунт</a>
+        <a href="cart.html">Корзина&thinsp;(0)</a>
+        <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="navClose">Закрыть</button>
+    <div class="mobile-nav__links">
+      <a href="catalog.html">Каталог</a>
+      <a href="shop.html">Новинки</a>
+      <a href="delivery.html">Доставка</a>
+    </div>
+    <div class="mobile-nav__actions">
+      <a href="account.html">Аккаунт</a>
+      <a href="cart.html">Корзина (0)</a>
+    </div>
+  </nav>
+
+  <!-- WP: the_content() → page.php -->
+  <main class="woocommerce-page content-page">
+
+    <nav class="breadcrumb">
+      <a href="index.html" class="breadcrumb__item">Главная</a>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__item breadcrumb__item--active">Доставка и возврат</span>
+    </nav>
+
+    <div class="content-page__layout">
+
+      <!-- Sidebar nav -->
+      <nav class="content-nav">
+        <a href="#delivery" class="content-nav__link content-nav__link--active">Доставка</a>
+        <a href="#payment" class="content-nav__link">Оплата</a>
+        <a href="#returns" class="content-nav__link">Возврат</a>
+        <a href="#sizes" class="content-nav__link">Размеры</a>
+        <a href="#contacts" class="content-nav__link">Контакты</a>
+      </nav>
+
+      <div class="content-body">
+
+        <section class="content-section" id="delivery">
+          <h1 class="content-section__title">Доставка</h1>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <span class="info-card__icon">📦</span>
+              <h3 class="info-card__title">Почта России</h3>
+              <p class="info-card__text">7–14 рабочих дней<br>от 350 ₽</p>
+            </div>
+            <div class="info-card">
+              <span class="info-card__icon">🚀</span>
+              <h3 class="info-card__title">СДЭК</h3>
+              <p class="info-card__text">3–7 рабочих дней<br>от 450 ₽</p>
+            </div>
+            <div class="info-card">
+              <span class="info-card__icon">🏪</span>
+              <h3 class="info-card__title">Самовывоз</h3>
+              <p class="info-card__text">Краснодар, г. Краснодар<br>Бесплатно</p>
+            </div>
+            <div class="info-card info-card--accent">
+              <span class="info-card__icon">🎁</span>
+              <h3 class="info-card__title">Бесплатно</h3>
+              <p class="info-card__text">При заказе<br>от 3 500 ₽</p>
+            </div>
+          </div>
+
+          <div class="content-accordion">
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="true">
+                Как отследить заказ?
+                <span class="accordion-icon"></span>
+              </button>
+              <div class="accordion-body">
+                <p>После отправки вы получите трек-номер на email. Отследить можно на сайте Почты России или СДЭК. Среднее время доставки — 5 рабочих дней.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                Доставляете ли в другие страны?
+                <span class="accordion-icon"></span>
+              </button>
+              <div class="accordion-body" hidden>
+                <p>Пока доставка только по России. Международная доставка в разработке — следите за нашими соцсетями.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" id="payment">
+          <h2 class="content-section__title">Оплата</h2>
+          <p class="content-text">Принимаем все способы оплаты:</p>
+          <ul class="content-list">
+            <li>Банковские карты Visa, MasterCard, МИР</li>
+            <li>СБП (Система быстрых платежей)</li>
+            <li>ЮMoney, SberPay</li>
+            <li>Наличными при самовывозе</li>
+          </ul>
+          <p class="content-text">Оплата производится в момент оформления заказа. Все транзакции защищены SSL-шифрованием.</p>
+        </section>
+
+        <section class="content-section" id="returns">
+          <h2 class="content-section__title">Возврат и обмен</h2>
+
+          <div class="content-accordion">
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="true">
+                Условия возврата
+                <span class="accordion-icon"></span>
+              </button>
+              <div class="accordion-body">
+                <p>Возврат в течение <strong>14 дней</strong> с момента получения. Товар должен быть в оригинальной упаковке, с бирками, без следов носки.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                Как оформить возврат?
+                <span class="accordion-icon"></span>
+              </button>
+              <div class="accordion-body" hidden>
+                <p>Напишите нам на <a href="mailto:mini-line@mail.ru" class="form-link">mini-line@mail.ru</a> с темой «Возврат #номер_заказа». Мы ответим в течение 24 часов.</p>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">
+                Когда вернут деньги?
+                <span class="accordion-icon"></span>
+              </button>
+              <div class="accordion-body" hidden>
+                <p>Деньги возвращаются на карту в течение 5–10 рабочих дней после получения товара на нашем складе.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section" id="sizes">
+          <h2 class="content-section__title">Таблица размеров</h2>
+          <p class="content-text">Все изделия MINILINE — оверсайз, дроп-шоулдер. Рекомендуем выбирать свой стандартный размер.</p>
+          <div class="size-table-wrap">
+            <table class="size-table">
+              <thead>
+                <tr>
+                  <th>Размер</th>
+                  <th>Обхват груди (см)</th>
+                  <th>Обхват талии (см)</th>
+                  <th>Длина изделия (см)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>XS</td><td>84–88</td><td>64–68</td><td>68</td></tr>
+                <tr><td>S</td><td>88–92</td><td>68–72</td><td>70</td></tr>
+                <tr><td>M</td><td>92–96</td><td>72–76</td><td>72</td></tr>
+                <tr><td>L</td><td>96–100</td><td>76–80</td><td>74</td></tr>
+                <tr><td>XL</td><td>100–108</td><td>80–88</td><td>76</td></tr>
+                <tr><td>XXL</td><td>108–116</td><td>88–96</td><td>78</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="content-section" id="contacts">
+          <h2 class="content-section__title">Контакты</h2>
+          <div class="contacts-grid">
+            <div class="contact-item">
+              <p class="contact-item__label">Email</p>
+              <a href="mailto:mini-line@mail.ru" class="contact-item__val form-link">mini-line@mail.ru</a>
+            </div>
+            <div class="contact-item">
+              <p class="contact-item__label">Telegram</p>
+              <a href="https://t.me/miniline_shop" class="contact-item__val form-link" target="_blank" rel="noopener">@miniline_shop</a>
+            </div>
+            <div class="contact-item">
+              <p class="contact-item__label">Instagram</p>
+              <a href="https://instagram.com/miniline_shop/" class="contact-item__val form-link" target="_blank" rel="noopener">@miniline_shop</a>
+            </div>
+            <div class="contact-item">
+              <p class="contact-item__label">Город</p>
+              <p class="contact-item__val">Краснодар, Россия</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <p class="footer__brand-name">Miniline</p>
+        <p class="footer__brand-desc">Авторская одежда с графическими принтами из Краснодара.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/miniline_shop/" class="footer__social" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://t.me/miniline_shop" class="footer__social" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Магазин</p>
+        <ul class="footer__col-links">
+          <li><a href="shop.html">Все товары</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Помощь</p>
+        <ul class="footer__col-links">
+          <li><a href="delivery.html">Доставка и возврат</a></li>
+          <li><a href="mailto:mini-line@mail.ru">mini-line@mail.ru</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 MINILINE. Все права защищены.</span>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

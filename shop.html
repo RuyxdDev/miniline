@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Все товары — MINILINE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<!-- WP: body_class() → woocommerce-page woocommerce-shop tax-product_cat -->
+<body>
+
+  <!-- WP: get_template_part('template-parts/header') -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <nav class="nav__links">
+        <a href="catalog.html">Каталог</a>
+        <a href="shop.html">Новинки</a>
+        <a href="delivery.html">О нас</a>
+        <a href="delivery.html">Размеры</a>
+      </nav>
+      <a href="index.html" class="logo">Miniline</a>
+      <div class="nav__actions">
+        <a href="#">Поиск</a>
+        <a href="account.html">Аккаунт</a>
+        <a href="cart.html">Корзина&thinsp;(0)</a>
+        <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="navClose">Закрыть</button>
+    <div class="mobile-nav__links">
+      <a href="catalog.html">Каталог</a>
+      <a href="shop.html">Новинки</a>
+      <a href="delivery.html">О нас</a>
+      <a href="delivery.html">Размеры</a>
+      <a href="delivery.html">Доставка</a>
+    </div>
+    <div class="mobile-nav__actions">
+      <a href="#">Поиск</a>
+      <a href="account.html">Аккаунт</a>
+      <a href="cart.html">Корзина (0)</a>
+    </div>
+  </nav>
+  <!-- /WP: header -->
+
+  <!-- WP: woocommerce_content() → archive-product.php -->
+  <main class="woocommerce-page shop-page">
+
+    <!-- Breadcrumb — WP: woocommerce_breadcrumb() -->
+    <nav class="breadcrumb" aria-label="Навигация">
+      <a href="index.html" class="breadcrumb__item">Главная</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="catalog.html" class="breadcrumb__item">Каталог</a>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__item breadcrumb__item--active">Все товары</span>
+    </nav>
+
+    <div class="shop-layout">
+
+      <!-- =========================================
+           Filter Sidebar
+           WP: get_template_part('template-parts/shop/filter-sidebar')
+           WC hooks: woocommerce_sidebar
+      ========================================= -->
+      <aside class="filter-sidebar" id="filterSidebar" aria-label="Фильтры">
+
+        <div class="filter-sidebar__header">
+          <span class="filter-sidebar__title">Фильтры</span>
+          <button class="filter-clear-all" id="clearAllFilters">Сбросить</button>
+        </div>
+
+        <!-- Sort — WP: woocommerce_catalog_ordering() -->
+        <div class="filter-group" data-group="sort">
+          <button class="filter-group__toggle" aria-expanded="true">
+            <span>Сортировка</span>
+            <span class="filter-group__icon"></span>
+          </button>
+          <div class="filter-group__body">
+            <label class="filter-radio">
+              <input type="radio" name="sort" value="default" checked>
+              <span class="filter-radio__label">По умолчанию</span>
+            </label>
+            <label class="filter-radio">
+              <input type="radio" name="sort" value="popularity">
+              <span class="filter-radio__label">По популярности</span>
+            </label>
+            <label class="filter-radio">
+              <input type="radio" name="sort" value="price_asc">
+              <span class="filter-radio__label">Сначала дешевле</span>
+            </label>
+            <label class="filter-radio">
+              <input type="radio" name="sort" value="price_desc">
+              <span class="filter-radio__label">Сначала дороже</span>
+            </label>
+            <label class="filter-radio">
+              <input type="radio" name="sort" value="new">
+              <span class="filter-radio__label">Новинки</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Category — WP: product_categories widget / wc_get_product_categories() -->
+        <div class="filter-group" data-group="category">
+          <button class="filter-group__toggle" aria-expanded="true">
+            <span>Категория</span>
+            <span class="filter-group__icon"></span>
+          </button>
+          <div class="filter-group__body">
+            <label class="filter-checkbox">
+              <input type="checkbox" name="cat" value="all" checked>
+              <span class="filter-checkbox__box"></span>
+              <span class="filter-checkbox__label">Все <em class="filter-checkbox__count">42</em></span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" name="cat" value="tshirt">
+              <span class="filter-checkbox__box"></span>
+              <span class="filter-checkbox__label">Футболки <em class="filter-checkbox__count">18</em></span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" name="cat" value="tops">
+              <span class="filter-checkbox__box"></span>
+              <span class="filter-checkbox__label">Топы <em class="filter-checkbox__count">10</em></span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" name="cat" value="dress">
+              <span class="filter-checkbox__box"></span>
+              <span class="filter-checkbox__label">Платья <em class="filter-checkbox__count">6</em></span>
+            </label>
+            <label class="filter-checkbox">
+              <input type="checkbox" name="cat" value="varenko">
+              <span class="filter-checkbox__box"></span>
+              <span class="filter-checkbox__label">Варенка <em class="filter-checkbox__count">8</em></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Size — WP: product attribute pa_size -->
+        <div class="filter-group" data-group="size">
+          <button class="filter-group__toggle" aria-expanded="true">
+            <span>Размер</span>
+            <span class="filter-group__icon"></span>
+          </button>
+          <div class="filter-group__body">
+            <div class="filter-sizes">
+              <button class="filter-size" data-size="xs">XS</button>
+              <button class="filter-size" data-size="s">S</button>
+              <button class="filter-size" data-size="m">M</button>
+              <button class="filter-size" data-size="l">L</button>
+              <button class="filter-size" data-size="xl">XL</button>
+              <button class="filter-size" data-size="xxl">XXL</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Color — WP: product attribute pa_color -->
+        <div class="filter-group" data-group="color">
+          <button class="filter-group__toggle" aria-expanded="false">
+            <span>Цвет</span>
+            <span class="filter-group__icon"></span>
+          </button>
+          <div class="filter-group__body" hidden>
+            <div class="filter-colors">
+              <button class="filter-color" style="--c:#1a1208" title="Чёрный" aria-label="Чёрный"></button>
+              <button class="filter-color" style="--c:#fff; border:1.5px solid #ddd" title="Белый" aria-label="Белый"></button>
+              <button class="filter-color" style="--c:#b8a99a" title="Бежевый" aria-label="Бежевый"></button>
+              <button class="filter-color" style="--c:#7a6a58" title="Коричневый" aria-label="Коричневый"></button>
+              <button class="filter-color" style="--c:#4a7c7e" title="Зелёный" aria-label="Зелёный"></button>
+              <button class="filter-color" style="--c:#c0392b" title="Красный" aria-label="Красный"></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price — WP: WC price filter widget -->
+        <div class="filter-group" data-group="price">
+          <button class="filter-group__toggle" aria-expanded="false">
+            <span>Цена</span>
+            <span class="filter-group__icon"></span>
+          </button>
+          <div class="filter-group__body" hidden>
+            <div class="filter-price">
+              <div class="filter-price__inputs">
+                <div class="filter-price__field">
+                  <span class="filter-price__currency">от ₽</span>
+                  <input class="filter-price__input" type="number" id="priceMin" value="1000" min="1000" max="5000">
+                </div>
+                <div class="filter-price__field">
+                  <span class="filter-price__currency">до ₽</span>
+                  <input class="filter-price__input" type="number" id="priceMax" value="5000" min="1000" max="5000">
+                </div>
+              </div>
+              <input class="filter-price__range" type="range" id="priceRange" min="1000" max="5000" value="5000">
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- =========================================
+           Products Main
+           WP: woocommerce_product_loop()
+      ========================================= -->
+      <section class="shop-main">
+
+        <!-- Toolbar -->
+        <div class="shop-toolbar">
+          <!-- WP: woocommerce_result_count() -->
+          <p class="shop-count"><strong>42</strong> товара</p>
+          <div class="shop-toolbar__right">
+            <!-- Mobile filter toggle -->
+            <button class="mobile-filter-btn" id="mobileFilterBtn" aria-label="Открыть фильтры">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 4h14M5 9h8M8 14h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              Фильтры
+            </button>
+            <!-- Active filters -->
+            <div class="active-filters" id="activeFilters"></div>
+          </div>
+        </div>
+
+        <!-- WP: woocommerce_product_loop() / wc_get_template_part('content','product') -->
+        <div class="product-grid product-grid--3" id="productGrid">
+
+          <div class="product-card">
+            <div class="product-card__image">
+              <img class="product-card__img" src="https://images.pexels.com/photos/35587808/pexels-photo-35587808.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="But Why? Mountains" loading="lazy">
+              <button class="product-card__wish" aria-label="В избранное">♡</button>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__name">«But Why? Mountains» Оверсайз</p>
+              <p class="product-card__sub">Чёрный / Белый</p>
+              <p class="product-card__price">2 500 ₽</p>
+              <a href="product.html" class="product-card__buy">Купить</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card__image">
+              <img class="product-card__img" src="https://images.pexels.com/photos/13644599/pexels-photo-13644599.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Топ базовый" loading="lazy">
+              <button class="product-card__wish" aria-label="В избранное">♡</button>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__name">Топ Miniline — базовый</p>
+              <p class="product-card__sub">Чёрный меланж</p>
+              <p class="product-card__price">1 800 ₽</p>
+              <a href="product.html" class="product-card__buy">Купить</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card__image">
+              <img class="product-card__img" src="https://images.pexels.com/photos/28996386/pexels-photo-28996386.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Stitch Варенка" loading="lazy">
+              <button class="product-card__wish" aria-label="В избранное">♡</button>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__name">Stitch — Чёрная варенка</p>
+              <p class="product-card__sub">Чёрный / Синий</p>
+              <p class="product-card__price">2 200 ₽</p>
+              <a href="product.html" class="product-card__buy">Купить</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card__image">
+              <img class="product-card__img" src="https://images.pexels.com/photos/2695854/pexels-photo-2695854.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Meow Blessed" loading="lazy">
+              <button class="product-card__wish" aria-label="В избранное">♡</button>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__name">«Meow Blessed» Оверсайз</p>
+              <p class="product-card__sub">Белый / Принт</p>
+              <p class="product-card__price">2 500 ₽</p>
+              <a href="product.html" class="product-card__buy">Купить</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card__image">
+              <img class="product-card__img" src="https://images.pexels.com/photos/3171641/pexels-photo-3171641.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Кот Пздц" loading="lazy">
+              <button class="product-card__wish" aria-label="В избранное">♡</button>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__name">«Кот Пздц» Оверсайз</p>
+              <p class="product-card__sub">Экрю</p>
+              <p class="product-card__price">2 500 ₽</p>
+              <a href="product.html" class="product-card__buy">Купить</a>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-card__image">
+              <img class="product-card__img" src="https://images.pexels.com/photos/9594676/pexels-photo-9594676.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Angel Варенка" loading="lazy">
+              <button class="product-card__wish" aria-label="В избранное">♡</button>
+            </div>
+            <div class="product-card__info">
+              <p class="product-card__name">Angel — Варенка</p>
+              <p class="product-card__sub">Чёрный</p>
+              <p class="product-card__price">2 200 ₽</p>
+              <a href="product.html" class="product-card__buy">Купить</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- WP: woocommerce_pagination() -->
+        <nav class="shop-pagination" aria-label="Страницы">
+          <button class="page-btn page-btn--active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <span class="page-dots">…</span>
+          <button class="page-btn">7</button>
+          <button class="page-btn page-btn--next">→</button>
+        </nav>
+
+      </section>
+
+    </div>
+
+  </main>
+  <!-- /WP: woocommerce_content -->
+
+  <!-- Mobile filter overlay -->
+  <div class="filter-overlay" id="filterOverlay" aria-hidden="true"></div>
+
+  <!-- WP: get_template_part('template-parts/footer') -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <p class="footer__brand-name">Miniline</p>
+        <p class="footer__brand-desc">Авторская одежда с графическими принтами из Краснодара.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/miniline_shop/" class="footer__social" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://t.me/miniline_shop" class="footer__social" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://vk.com/miniline_shop" class="footer__social" target="_blank" rel="noopener">ВКонтакте</a>
+          <a href="https://tiktok.com/@miniline_shop" class="footer__social" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Магазин</p>
+        <ul class="footer__col-links">
+          <li><a href="shop.html">Все товары</a></li>
+          <li><a href="shop.html?cat=unisex">Унисекс</a></li>
+          <li><a href="shop.html?cat=women">Женское</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Помощь</p>
+        <ul class="footer__col-links">
+          <li><a href="delivery.html">Доставка и возврат</a></li>
+          <li><a href="delivery.html">Размерная таблица</a></li>
+          <li><a href="mailto:mini-line@mail.ru">mini-line@mail.ru</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Аккаунт</p>
+        <ul class="footer__col-links">
+          <li><a href="account.html">Войти</a></li>
+          <li><a href="cart.html">Корзина</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 MINILINE. Все права защищены.</span>
+      <div class="footer__legal">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Публичная оферта</a>
+      </div>
+    </div>
+  </footer>
+  <!-- /WP: footer -->
+
+  <script src="scripts.js"></script>
+</body>
+</html>

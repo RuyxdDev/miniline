@@ -6,17 +6,10 @@
   <title>MINILINE — Стиль и качество</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500&subset=cyrillic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!-- =====================================================
-       Announcement Bar
-  ====================================================== -->
-  <div class="announcement">
-    Бесплатная доставка по России &nbsp;·&nbsp; Новая коллекция уже в каталоге
-  </div>
 
   <!-- =====================================================
        Header
@@ -25,254 +18,193 @@
     <div class="header__inner">
 
       <nav class="nav__links">
-        <a href="#">Каталог</a>
-        <a href="#">Новинки</a>
-        <a href="#">О нас</a>
-        <a href="#">Размеры</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="shop.html">Новинки</a>
+        <a href="delivery.html">О нас</a>
+        <a href="delivery.html">Размеры</a>
       </nav>
 
-      <a href="#" class="logo">Miniline</a>
+      <a href="index.html" class="logo">Miniline</a>
 
       <div class="nav__actions">
         <a href="#">Поиск</a>
-        <a href="#">Аккаунт</a>
-        <a href="#">Корзина &thinsp;(0)</a>
+        <a href="account.html">Аккаунт</a>
+        <a href="cart.html">Корзина &thinsp;(0)</a>
         <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
       </div>
 
     </div>
   </header>
 
-  <!-- =====================================================
-       Mobile Navigation
-  ====================================================== -->
+  <!-- Mobile Nav -->
   <nav class="mobile-nav" id="mobileNav">
     <button class="mobile-nav__close" id="navClose">Закрыть</button>
     <div class="mobile-nav__links">
-      <a href="#">Каталог</a>
-      <a href="#">Новинки</a>
-      <a href="#">О нас</a>
-      <a href="#">Размеры</a>
-      <a href="#">Доставка</a>
+      <a href="catalog.html">Каталог</a>
+      <a href="shop.html">Новинки</a>
+      <a href="delivery.html">О нас</a>
+      <a href="delivery.html">Размеры</a>
+      <a href="delivery.html">Доставка</a>
     </div>
     <div class="mobile-nav__actions">
       <a href="#">Поиск</a>
-      <a href="#">Аккаунт</a>
-      <a href="#">Корзина (0)</a>
+      <a href="account.html">Аккаунт</a>
+      <a href="cart.html">Корзина (0)</a>
     </div>
   </nav>
 
   <!-- =====================================================
        Hero
   ====================================================== -->
-  <section class="hero">
-    <img
-      class="hero__img"
-      src="https://images.pexels.com/photos/30816952/pexels-photo-30816952.jpeg?auto=compress&cs=tinysrgb&w=1920&dpr=1"
-      alt=""
-      loading="eager"
-    >
-    <div class="hero__overlay"></div>
-
+  <section class="hero hero--dark">
     <div class="hero__content">
-      <div class="hero__text">
-        <p class="hero__eyebrow">Весна / Лето 2026</p>
-        <h1 class="hero__title">Новая<br>Коллекция</h1>
-        <div class="hero__cta-group">
-          <a href="#" class="btn btn--light">Смотреть каталог</a>
-          <a href="#" class="btn btn--ghost">Лукбук</a>
-        </div>
-      </div>
-      <div class="hero__meta">
-        <div class="hero__season">SS26</div>
+      <p class="hero__eyebrow">Весна / Лето 2026</p>
+      <h1 class="hero__title">Miniline</h1>
+      <p class="hero__sub">Новая коллекция уже в каталоге</p>
+      <div class="hero__cta-group">
+        <a href="catalog.html" class="btn btn--light">В каталог</a>
       </div>
     </div>
   </section>
 
-  <!-- =====================================================
-       Category Tiles
-  ====================================================== -->
-  <div class="categories">
-
-    <div class="category">
-      <img
-        class="category__img"
-        src="https://images.pexels.com/photos/12301327/pexels-photo-12301327.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1"
-        alt="Оверсайз"
-        loading="lazy"
-      >
-      <div class="category__inner">
-        <span class="category__label">Перейти</span>
-        <span class="category__name">Оверсайз</span>
-      </div>
-    </div>
-
-    <div class="category">
-      <img
-        class="category__img"
-        src="https://images.pexels.com/photos/24287022/pexels-photo-24287022.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1"
-        alt="Топы и платья"
-        loading="lazy"
-      >
-      <div class="category__inner">
-        <span class="category__label">Перейти</span>
-        <span class="category__name">Топы & Платья</span>
-      </div>
-    </div>
-
-    <div class="category">
-      <img
-        class="category__img"
-        src="https://images.pexels.com/photos/14666378/pexels-photo-14666378.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1"
-        alt="Варенка"
-        loading="lazy"
-      >
-      <div class="category__inner">
-        <span class="category__label">Перейти</span>
-        <span class="category__name">Варенка</span>
-      </div>
-    </div>
-
-  </div>
 
   <!-- =====================================================
-       Featured Collection
+       Bestsellers Carousel
   ====================================================== -->
-  <div class="section">
-    <div class="section__header">
-      <h2 class="section__title">Избранное</h2>
-      <a href="#" class="section__link">Смотреть всё</a>
+  <div class="carousel-section">
+    <div class="carousel-section__head">
+      <div>
+        <span class="section__title">Хиты продаж</span>
+        <span class="section__subtitle">Bestsellers · сортировка по популярности</span>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="bestPrev" aria-label="Назад">←</button>
+        <button class="carousel-btn" id="bestNext" aria-label="Вперёд">→</button>
+      </div>
     </div>
 
-    <div class="product-grid product-grid--4">
+    <div class="carousel-track-wrap">
+      <div class="carousel-track" id="bestTrack">
 
-      <div class="product-card">
-        <div class="product-card__image">
-          <img
-            class="product-card__img"
-            src="https://images.pexels.com/photos/35587808/pexels-photo-35587808.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1"
-            alt="But Why? Mountains Оверсайз"
-            loading="lazy"
-          >
-          <div class="product-card__image-overlay">
-            <button class="product-card__quick-add">Добавить</button>
+        <div class="product-card carousel-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/35587808/pexels-photo-35587808.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="But Why? Mountains" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">«But Why? Mountains» Оверсайз</p>
+            <p class="product-card__sub">Чёрный / Белый</p>
+            <p class="product-card__price">2 500 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
           </div>
         </div>
-        <div class="product-card__info">
-          <p class="product-card__name">«But Why? Mountains» Оверсайз</p>
-          <p class="product-card__sub">Чёрный / Белый</p>
-          <p class="product-card__price">2 500 ₽</p>
-        </div>
-      </div>
 
-      <div class="product-card">
-        <div class="product-card__image">
-          <img
-            class="product-card__img"
-            src="https://images.pexels.com/photos/13644599/pexels-photo-13644599.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1"
-            alt="Топ Miniline базовый"
-            loading="lazy"
-          >
-          <div class="product-card__image-overlay">
-            <button class="product-card__quick-add">Добавить</button>
+        <div class="product-card carousel-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/13644599/pexels-photo-13644599.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Топ базовый" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">Топ Miniline — базовый</p>
+            <p class="product-card__sub">Чёрный меланж</p>
+            <p class="product-card__price">1 800 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
           </div>
         </div>
-        <div class="product-card__info">
-          <p class="product-card__name">Топ Miniline — базовый</p>
-          <p class="product-card__sub">Чёрный меланж</p>
-          <p class="product-card__price">1 800 ₽</p>
-        </div>
-      </div>
 
-      <div class="product-card">
-        <div class="product-card__image">
-          <img
-            class="product-card__img"
-            src="https://images.pexels.com/photos/28996386/pexels-photo-28996386.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1"
-            alt="Stitch Варенка"
-            loading="lazy"
-          >
-          <div class="product-card__image-overlay">
-            <button class="product-card__quick-add">Добавить</button>
+        <div class="product-card carousel-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/28996386/pexels-photo-28996386.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Stitch Варенка" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">Stitch — Чёрная варенка</p>
+            <p class="product-card__sub">Чёрный / Синий</p>
+            <p class="product-card__price">2 200 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
           </div>
         </div>
-        <div class="product-card__info">
-          <p class="product-card__name">Stitch — Чёрная варенка</p>
-          <p class="product-card__sub">Чёрный / Синий</p>
-          <p class="product-card__price">2 200 ₽</p>
-        </div>
-      </div>
 
-      <div class="product-card">
-        <div class="product-card__image">
-          <img
-            class="product-card__img"
-            src="https://images.pexels.com/photos/2695854/pexels-photo-2695854.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1"
-            alt="Meow Blessed Оверсайз"
-            loading="lazy"
-          >
-          <div class="product-card__image-overlay">
-            <button class="product-card__quick-add">Добавить</button>
+        <div class="product-card carousel-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/2695854/pexels-photo-2695854.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Meow Blessed" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">«Meow Blessed» Оверсайз</p>
+            <p class="product-card__sub">Белый / Принт</p>
+            <p class="product-card__price">2 500 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
           </div>
         </div>
-        <div class="product-card__info">
-          <p class="product-card__name">«Meow Blessed» Оверсайз</p>
-          <p class="product-card__sub">Белый / Принт</p>
-          <p class="product-card__price">2 500 ₽</p>
-        </div>
-      </div>
 
+        <div class="product-card carousel-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/3171641/pexels-photo-3171641.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Кот Пздц" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">«Кот Пздц» Оверсайз</p>
+            <p class="product-card__sub">Экрю</p>
+            <p class="product-card__price">2 500 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
+          </div>
+        </div>
+
+        <div class="product-card carousel-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/9594676/pexels-photo-9594676.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Angel Варенка" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">Angel — Варенка</p>
+            <p class="product-card__sub">Чёрный</p>
+            <p class="product-card__price">2 200 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
+          </div>
+        </div>
+
+        <div class="product-card carousel-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/9594088/pexels-photo-9594088.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Длинное платье" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">Длинное платье MINILINE</p>
+            <p class="product-card__sub">Кружево — Чёрный</p>
+            <p class="product-card__price">3 800 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
+          </div>
+        </div>
+
+        <div class="product-card carousel-card">
+          <div class="product-card__image">
+            <img class="product-card__img" src="https://images.pexels.com/photos/2695854/pexels-photo-2695854.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Базовый оверсайз" loading="lazy">
+            <button class="product-card__wish" aria-label="В избранное">♡</button>
+          </div>
+          <div class="product-card__info">
+            <p class="product-card__name">Базовый оверсайз — Белый</p>
+            <p class="product-card__sub">Белый</p>
+            <p class="product-card__price">2 000 ₽</p>
+            <a href="product.html" class="product-card__buy">Купить</a>
+          </div>
+        </div>
+
+      </div>
     </div>
+
+    <a href="catalog.html" class="carousel-section__all">Смотреть весь каталог →</a>
   </div>
-
-  <div class="divider"></div>
-
-  <!-- =====================================================
-       Editorial — Brand Story
-  ====================================================== -->
-  <div class="editorial">
-    <div class="editorial__media">
-      <img
-        class="editorial__img"
-        src="https://images.pexels.com/photos/32965721/pexels-photo-32965721.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
-        alt="Коллекция MINILINE Весна-Лето 2026"
-        loading="lazy"
-      >
-    </div>
-    <div class="editorial__content">
-      <p class="editorial__eyebrow">О бренде — 2026</p>
-      <h2 class="editorial__title">Носи то,<br>что чувствуешь</h2>
-      <p class="editorial__body">
-        Каждая вещь MINILINE — это не просто одежда. Это настроение, характер, история. Оверсайз-силуэты, уникальные принты и варенки созданы для тех, кто не боится выражать себя по-настоящему.
-      </p>
-      <a href="#" class="btn btn--dark">Перейти в каталог</a>
-    </div>
-  </div>
-
-  <!-- =====================================================
-       Brand Statement
-  ====================================================== -->
-  <div class="statement">
-    <p class="t-label" style="margin-bottom: 24px;">Наша философия</p>
-    <blockquote class="statement__quote">
-      «Одежда — это не просто ткань. Это твоё настроение, твоя история, твой стиль. Каждая вещь MINILINE создана для тех, кто не боится быть собой.»
-    </blockquote>
-    <p class="statement__attr">— MINILINE, Краснодар</p>
-  </div>
-
-  <div class="divider"></div>
 
   <!-- =====================================================
        New Arrivals
   ====================================================== -->
   <div class="section">
-    <div class="section__header">
-      <h2 class="section__title">Новинки</h2>
-      <a href="#" class="section__link">Весь каталог</a>
+    <div class="section__heading">
+      <span class="section__title">Новинки</span>
+      <span class="section__subtitle">New Drop</span>
     </div>
 
     <div class="product-grid product-grid--3">
@@ -280,57 +212,54 @@
       <div class="product-card">
         <div class="product-card__image">
           <img
-            class="product-card__img product-card__img--45"
+            class="product-card__img"
             src="https://images.pexels.com/photos/3171641/pexels-photo-3171641.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1"
             alt="Кот Пздц Оверсайз"
             loading="lazy"
           >
-          <div class="product-card__image-overlay">
-            <button class="product-card__quick-add">Добавить</button>
-          </div>
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
         </div>
         <div class="product-card__info">
           <p class="product-card__name">«Кот Пздц» Оверсайз</p>
           <p class="product-card__sub">Экрю</p>
           <p class="product-card__price">2 500 ₽</p>
+          <button class="product-card__buy">Купить</button>
         </div>
       </div>
 
       <div class="product-card">
         <div class="product-card__image">
           <img
-            class="product-card__img product-card__img--45"
+            class="product-card__img"
             src="https://images.pexels.com/photos/9594088/pexels-photo-9594088.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1"
             alt="Длинное платье MINILINE кружево"
             loading="lazy"
           >
-          <div class="product-card__image-overlay">
-            <button class="product-card__quick-add">Добавить</button>
-          </div>
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
         </div>
         <div class="product-card__info">
           <p class="product-card__name">Длинное платье MINILINE</p>
           <p class="product-card__sub">Кружево — Чёрный</p>
           <p class="product-card__price">3 800 ₽</p>
+          <button class="product-card__buy">Купить</button>
         </div>
       </div>
 
       <div class="product-card">
         <div class="product-card__image">
           <img
-            class="product-card__img product-card__img--45"
+            class="product-card__img"
             src="https://images.pexels.com/photos/9594676/pexels-photo-9594676.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1"
             alt="Angel Варенка"
             loading="lazy"
           >
-          <div class="product-card__image-overlay">
-            <button class="product-card__quick-add">Добавить</button>
-          </div>
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
         </div>
         <div class="product-card__info">
           <p class="product-card__name">Angel — Варенка</p>
           <p class="product-card__sub">Чёрный</p>
           <p class="product-card__price">2 200 ₽</p>
+          <button class="product-card__buy">Купить</button>
         </div>
       </div>
 
@@ -338,28 +267,46 @@
   </div>
 
   <!-- =====================================================
-       Banner — Secret Drop
+       Socials
   ====================================================== -->
-  <div class="banner">
-    <div class="banner__bg"></div>
-    <div class="banner__content">
-      <p class="banner__eyebrow">Только для подписчиков — эксклюзивный доступ</p>
-      <h2 class="banner__title">Секретный<br>Дроп</h2>
-      <a href="#" class="btn btn--light" style="margin-top:8px;">Хочу первым</a>
-    </div>
-  </div>
+  <div class="socials-section">
+    <p class="socials-section__label">Следите за нами</p>
+    <h2 class="socials-section__title">Мы в соцсетях</h2>
+    <div class="socials-grid">
 
-  <!-- =====================================================
-       Newsletter
-  ====================================================== -->
-  <div class="newsletter">
-    <p class="newsletter__label">Будьте в курсе</p>
-    <h2 class="newsletter__title">Подпишитесь на обновления</h2>
-    <p class="newsletter__sub">Первым узнавай о новинках, дропах и специальных предложениях.</p>
-    <form class="newsletter__form" onsubmit="return false;">
-      <input class="newsletter__input" type="email" placeholder="Введите email">
-      <button class="newsletter__submit" type="submit">Подписаться</button>
-    </form>
+      <a href="https://instagram.com/miniline_shop/" class="social-card" target="_blank" rel="noopener">
+        <span class="social-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </span>
+        <span class="social-card__name">Instagram</span>
+        <span class="social-card__handle">@miniline_shop</span>
+      </a>
+
+      <a href="https://t.me/miniline_shop" class="social-card" target="_blank" rel="noopener">
+        <span class="social-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.5 3.5L2.5 10.5L9.5 13L17.5 7L11.5 14.5L18.5 18.5L21.5 3.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.5 13L11.5 20.5L14.5 16.5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="social-card__name">Telegram</span>
+        <span class="social-card__handle">@miniline_shop</span>
+      </a>
+
+      <a href="https://vk.com/miniline_shop" class="social-card" target="_blank" rel="noopener">
+        <span class="social-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 6h4.5l2.5 7 2.5-7H16c.5 3 2 5.5 5 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 6C2 6 2 18 12 18C22 18 22 6 22 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </span>
+        <span class="social-card__name">ВКонтакте</span>
+        <span class="social-card__handle">miniline_shop</span>
+      </a>
+
+      <a href="https://tiktok.com/@miniline_shop" class="social-card" target="_blank" rel="noopener">
+        <span class="social-card__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12a4 4 0 1 0 4 4V4c1 2 3 3 5 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="social-card__name">TikTok</span>
+        <span class="social-card__handle">@miniline_shop</span>
+      </a>
+
+    </div>
   </div>
 
   <!-- =====================================================
@@ -420,51 +367,12 @@
       <div class="footer__legal">
         <a href="#">Политика конфиденциальности</a>
         <a href="#">Публичная оферта</a>
-        <a href="#">Настройки cookie</a>
+        <a href="#">Cookie</a>
       </div>
     </div>
   </footer>
 
-  <!-- =====================================================
-       Script — Header scroll + Mobile nav
-  ====================================================== -->
-  <script>
-    // Header shadow on scroll
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
-
-    // Mobile nav + burger animation
-    const burger    = document.getElementById('burgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const navClose  = document.getElementById('navClose');
-
-    function openNav() {
-      mobileNav.classList.add('open');
-      burger.classList.add('open');
-      document.body.style.overflow = 'hidden'; // lock scroll when menu open
-    }
-
-    function closeNav() {
-      mobileNav.classList.remove('open');
-      burger.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    burger.addEventListener('click', openNav);
-    navClose.addEventListener('click', closeNav);
-
-    // Close on outside tap
-    mobileNav.addEventListener('click', (e) => {
-      if (e.target === mobileNav) closeNav();
-    });
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeNav();
-    });
-  </script>
+  <script src="scripts.js"></script>
 
 </body>
 </html>
