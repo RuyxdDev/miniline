@@ -71,131 +71,182 @@
 
 
   <!-- =====================================================
-       Bestsellers Carousel
+       Bestsellers Feed
   ====================================================== -->
-  <div class="carousel-section">
-    <div class="carousel-section__head">
+  <div class="feed-section">
+    <div class="feed-section__head">
       <div>
         <span class="section__title">Хиты продаж</span>
-        <span class="section__subtitle">Bestsellers · сортировка по популярности</span>
+        <span class="section__subtitle">Bestsellers · по популярности</span>
       </div>
-      <div class="carousel-nav">
-        <button class="carousel-btn" id="bestPrev" aria-label="Назад">←</button>
-        <button class="carousel-btn" id="bestNext" aria-label="Вперёд">→</button>
-      </div>
+      <a href="catalog.html" class="section__link">Весь каталог</a>
     </div>
 
-    <div class="carousel-track-wrap">
-      <div class="carousel-track" id="bestTrack">
+    <div class="product-grid product-grid--4" id="bestFeed">
 
-        <div class="product-card carousel-card">
-          <div class="product-card__image">
-            <img class="product-card__img" src="https://images.pexels.com/photos/35587808/pexels-photo-35587808.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="But Why? Mountains" loading="lazy">
-            <button class="product-card__wish" aria-label="В избранное">♡</button>
-          </div>
-          <div class="product-card__info">
-            <p class="product-card__name">«But Why? Mountains» Оверсайз</p>
-            <p class="product-card__sub">Чёрный / Белый</p>
-            <p class="product-card__price">2 500 ₽</p>
-            <a href="product.html" class="product-card__buy">Купить</a>
-          </div>
+      <div class="product-card">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/35587808/pexels-photo-35587808.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="But Why? Mountains" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
         </div>
-
-        <div class="product-card carousel-card">
-          <div class="product-card__image">
-            <img class="product-card__img" src="https://images.pexels.com/photos/13644599/pexels-photo-13644599.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Топ базовый" loading="lazy">
-            <button class="product-card__wish" aria-label="В избранное">♡</button>
-          </div>
-          <div class="product-card__info">
-            <p class="product-card__name">Топ Miniline — базовый</p>
-            <p class="product-card__sub">Чёрный меланж</p>
-            <p class="product-card__price">1 800 ₽</p>
-            <a href="product.html" class="product-card__buy">Купить</a>
-          </div>
+        <div class="product-card__info">
+          <p class="product-card__name">«But Why? Mountains» Оверсайз</p>
+          <p class="product-card__sub">Чёрный / Белый</p>
+          <p class="product-card__price">2 500 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
         </div>
-
-        <div class="product-card carousel-card">
-          <div class="product-card__image">
-            <img class="product-card__img" src="https://images.pexels.com/photos/28996386/pexels-photo-28996386.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Stitch Варенка" loading="lazy">
-            <button class="product-card__wish" aria-label="В избранное">♡</button>
-          </div>
-          <div class="product-card__info">
-            <p class="product-card__name">Stitch — Чёрная варенка</p>
-            <p class="product-card__sub">Чёрный / Синий</p>
-            <p class="product-card__price">2 200 ₽</p>
-            <a href="product.html" class="product-card__buy">Купить</a>
-          </div>
-        </div>
-
-        <div class="product-card carousel-card">
-          <div class="product-card__image">
-            <img class="product-card__img" src="https://images.pexels.com/photos/2695854/pexels-photo-2695854.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Meow Blessed" loading="lazy">
-            <button class="product-card__wish" aria-label="В избранное">♡</button>
-          </div>
-          <div class="product-card__info">
-            <p class="product-card__name">«Meow Blessed» Оверсайз</p>
-            <p class="product-card__sub">Белый / Принт</p>
-            <p class="product-card__price">2 500 ₽</p>
-            <a href="product.html" class="product-card__buy">Купить</a>
-          </div>
-        </div>
-
-        <div class="product-card carousel-card">
-          <div class="product-card__image">
-            <img class="product-card__img" src="https://images.pexels.com/photos/3171641/pexels-photo-3171641.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Кот Пздц" loading="lazy">
-            <button class="product-card__wish" aria-label="В избранное">♡</button>
-          </div>
-          <div class="product-card__info">
-            <p class="product-card__name">«Кот Пздц» Оверсайз</p>
-            <p class="product-card__sub">Экрю</p>
-            <p class="product-card__price">2 500 ₽</p>
-            <a href="product.html" class="product-card__buy">Купить</a>
-          </div>
-        </div>
-
-        <div class="product-card carousel-card">
-          <div class="product-card__image">
-            <img class="product-card__img" src="https://images.pexels.com/photos/9594676/pexels-photo-9594676.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Angel Варенка" loading="lazy">
-            <button class="product-card__wish" aria-label="В избранное">♡</button>
-          </div>
-          <div class="product-card__info">
-            <p class="product-card__name">Angel — Варенка</p>
-            <p class="product-card__sub">Чёрный</p>
-            <p class="product-card__price">2 200 ₽</p>
-            <a href="product.html" class="product-card__buy">Купить</a>
-          </div>
-        </div>
-
-        <div class="product-card carousel-card">
-          <div class="product-card__image">
-            <img class="product-card__img" src="https://images.pexels.com/photos/9594088/pexels-photo-9594088.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Длинное платье" loading="lazy">
-            <button class="product-card__wish" aria-label="В избранное">♡</button>
-          </div>
-          <div class="product-card__info">
-            <p class="product-card__name">Длинное платье MINILINE</p>
-            <p class="product-card__sub">Кружево — Чёрный</p>
-            <p class="product-card__price">3 800 ₽</p>
-            <a href="product.html" class="product-card__buy">Купить</a>
-          </div>
-        </div>
-
-        <div class="product-card carousel-card">
-          <div class="product-card__image">
-            <img class="product-card__img" src="https://images.pexels.com/photos/2695854/pexels-photo-2695854.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Базовый оверсайз" loading="lazy">
-            <button class="product-card__wish" aria-label="В избранное">♡</button>
-          </div>
-          <div class="product-card__info">
-            <p class="product-card__name">Базовый оверсайз — Белый</p>
-            <p class="product-card__sub">Белый</p>
-            <p class="product-card__price">2 000 ₽</p>
-            <a href="product.html" class="product-card__buy">Купить</a>
-          </div>
-        </div>
-
       </div>
+
+      <div class="product-card">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/13644599/pexels-photo-13644599.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Топ базовый" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Топ Miniline — базовый</p>
+          <p class="product-card__sub">Чёрный меланж</p>
+          <p class="product-card__price">1 800 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/28996386/pexels-photo-28996386.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Stitch Варенка" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Stitch — Чёрная варенка</p>
+          <p class="product-card__sub">Чёрный / Синий</p>
+          <p class="product-card__price">2 200 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/2695854/pexels-photo-2695854.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Meow Blessed" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">«Meow Blessed» Оверсайз</p>
+          <p class="product-card__sub">Белый / Принт</p>
+          <p class="product-card__price">2 500 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/3171641/pexels-photo-3171641.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Кот Пздц" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">«Кот Пздц» Оверсайз</p>
+          <p class="product-card__sub">Экрю</p>
+          <p class="product-card__price">2 500 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/9594676/pexels-photo-9594676.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Angel Варенка" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Angel — Варенка</p>
+          <p class="product-card__sub">Чёрный</p>
+          <p class="product-card__price">2 200 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/9594088/pexels-photo-9594088.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Длинное платье" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Длинное платье MINILINE</p>
+          <p class="product-card__sub">Кружево — Чёрный</p>
+          <p class="product-card__price">3 800 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/35587808/pexels-photo-35587808.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Базовый оверсайз" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Базовый оверсайз — Белый</p>
+          <p class="product-card__sub">Белый</p>
+          <p class="product-card__price">2 000 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
+        </div>
+      </div>
+
+      <!-- скрытые карточки, показываются по «Показать ещё» -->
+      <div class="product-card feed-hidden">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/28996386/pexels-photo-28996386.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Варенка Синяя" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Варенка — Синяя</p>
+          <p class="product-card__sub">Синий</p>
+          <p class="product-card__price">2 200 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
+        </div>
+      </div>
+
+      <div class="product-card feed-hidden">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/13644599/pexels-photo-13644599.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Топ кружево" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Топ MINILINE — кружево</p>
+          <p class="product-card__sub">Белый</p>
+          <p class="product-card__price">1 900 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
+        </div>
+      </div>
+
+      <div class="product-card feed-hidden">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/2695854/pexels-photo-2695854.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Оверсайз Серый" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">«Don't Smoke» Оверсайз</p>
+          <p class="product-card__sub">Серый / Принт</p>
+          <p class="product-card__price">2 500 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
+        </div>
+      </div>
+
+      <div class="product-card feed-hidden">
+        <div class="product-card__image">
+          <img class="product-card__img" src="https://images.pexels.com/photos/9594676/pexels-photo-9594676.jpeg?auto=compress&cs=tinysrgb&w=700&dpr=1" alt="Платье Мини" loading="lazy">
+          <button class="product-card__wish" aria-label="В избранное">♡</button>
+        </div>
+        <div class="product-card__info">
+          <p class="product-card__name">Платье мини — Чёрное</p>
+          <p class="product-card__sub">Чёрный</p>
+          <p class="product-card__price">2 800 ₽</p>
+          <a href="product.html" class="product-card__buy">Купить</a>
+        </div>
+      </div>
+
     </div>
 
-    <a href="catalog.html" class="carousel-section__all">Смотреть весь каталог →</a>
+    <div class="feed-more-wrap">
+      <button class="feed-more-btn" id="feedMoreBtn">Показать ещё</button>
+      <p class="feed-more-count" id="feedCount">Показано 8 из 12</p>
+    </div>
   </div>
 
   <!-- =====================================================

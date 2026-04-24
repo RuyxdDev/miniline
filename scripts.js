@@ -45,6 +45,25 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ============================================================
+     BESTSELLERS FEED — «Показать ещё»
+  ============================================================ */
+  const feedMoreBtn = document.getElementById('feedMoreBtn');
+  const feedCount   = document.getElementById('feedCount');
+
+  if (feedMoreBtn) {
+    feedMoreBtn.addEventListener('click', () => {
+      const hidden = document.querySelectorAll('#bestFeed .feed-hidden');
+      hidden.forEach(card => {
+        card.classList.remove('feed-hidden');
+        card.style.animation = 'feedIn 0.3s ease both';
+      });
+      feedMoreBtn.disabled = true;
+      feedMoreBtn.textContent = 'Всё загружено';
+      if (feedCount) feedCount.textContent = 'Показано 12 из 12';
+    });
+  }
+
+  /* ============================================================
      SHOP PAGE — filters
   ============================================================ */
 

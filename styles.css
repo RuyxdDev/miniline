@@ -1020,6 +1020,68 @@ ul  { list-style: none; }
 }
 
 /* ============================================================
+   Bestsellers Feed
+============================================================ */
+.feed-section {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 80px 32px;
+}
+
+.feed-section__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.feed-hidden { display: none; }
+
+@keyframes feedIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.feed-more-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 48px;
+}
+
+.feed-more-btn {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 13px 40px;
+  border: 1.5px solid var(--text-primary);
+  border-radius: var(--radius-btn);
+  background: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background var(--ease-fast), color var(--ease-fast);
+}
+.feed-more-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.feed-more-btn:disabled { opacity: 0.4; cursor: default; }
+
+.feed-more-count {
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 1100px) {
+  .feed-section { padding: 64px 24px; }
+}
+@media (max-width: 860px) {
+  .feed-section { padding: 48px 16px; }
+  .feed-section__head { flex-direction: column; gap: 6px; }
+}
+
+/* ============================================================
    Shared: Breadcrumb, Page title
 ============================================================ */
 .breadcrumb {
