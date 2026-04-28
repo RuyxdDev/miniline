@@ -6,7 +6,7 @@
   <title>MINILINE — Стиль и качество</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,22 +17,32 @@
   <header class="header" id="header">
     <div class="header__inner">
 
+      <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+
       <nav class="nav__links">
         <a href="catalog.html">Каталог</a>
         <a href="shop.html">Новинки</a>
-        <a href="delivery.html">О нас</a>
-        <a href="delivery.html">Размеры</a>
+        <a href="about.html">О нас</a>
+        <a href="delivery.html">Доставка</a>
       </nav>
 
       <a href="index.html" class="logo">Miniline</a>
 
       <div class="nav__actions">
+        <a href="#" class="nav__icon-btn" aria-label="Поиск">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="account.html" class="nav__icon-btn" aria-label="Аккаунт">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="cart.html" class="nav__icon-btn" aria-label="Корзина" style="position:relative">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.7"/><path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
         <a href="#">Поиск</a>
         <a href="account.html">Аккаунт</a>
-        <a href="cart.html">Корзина &thinsp;(0)</a>
-        <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
-          <span></span><span></span><span></span>
-        </button>
+        <a href="cart.html">Корзина&thinsp;(0)</a>
       </div>
 
     </div>
@@ -60,9 +70,8 @@
   ====================================================== -->
   <section class="hero hero--dark">
     <div class="hero__content">
-      <p class="hero__eyebrow">Весна / Лето 2026</p>
       <h1 class="hero__title">Miniline</h1>
-      <p class="hero__sub">Новая коллекция уже в каталоге</p>
+      <p class="hero__sub">Стиль и качество</p>
       <div class="hero__cta-group">
         <a href="catalog.html" class="btn btn--light">В каталог</a>
       </div>
@@ -90,6 +99,11 @@
           <button class="product-card__wish" aria-label="В избранное">♡</button>
         </div>
         <div class="product-card__info">
+          <!-- WP: woocommerce_get_product_thumbnail() → wc_get_rating_html() -->
+          <div class="product-card__rating">
+            <div class="star-rating" aria-label="4.9 из 5"><span class="star-rating__fill" style="width:98%"></span></div>
+            <span class="product-card__rating-count">128</span>
+          </div>
           <p class="product-card__name">«But Why? Mountains» Оверсайз</p>
           <p class="product-card__sub">Чёрный / Белый</p>
           <p class="product-card__price">2 500 ₽</p>

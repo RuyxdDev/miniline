@@ -6,29 +6,43 @@
   <title>Корзина — MINILINE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <!-- WP: body_class() → woocommerce-page woocommerce-cart -->
 <body>
 
-  <header class="header" id="header">
+<header class="header" id="header">
     <div class="header__inner">
+
+      <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+
       <nav class="nav__links">
         <a href="catalog.html">Каталог</a>
         <a href="shop.html">Новинки</a>
-        <a href="delivery.html">О нас</a>
-        <a href="delivery.html">Размеры</a>
+        <a href="about.html">О нас</a>
+        <a href="delivery.html">Доставка</a>
       </nav>
+
       <a href="index.html" class="logo">Miniline</a>
+
       <div class="nav__actions">
+        <a href="#" class="nav__icon-btn" aria-label="Поиск">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="account.html" class="nav__icon-btn" aria-label="Аккаунт">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="cart.html" class="nav__icon-btn" aria-label="Корзина">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.7"/><path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
         <a href="#">Поиск</a>
         <a href="account.html">Аккаунт</a>
-        <a href="cart.html" style="color:var(--text-primary)">Корзина&thinsp;(2)</a>
-        <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
-          <span></span><span></span><span></span>
-        </button>
+        <a href="cart.html">Корзина&thinsp;(0)</a>
       </div>
+
     </div>
   </header>
   <nav class="mobile-nav" id="mobileNav">

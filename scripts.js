@@ -186,6 +186,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* Click "N отзывов" → switch to reviews tab */
+  document.querySelector('.product-summary__rating-link')?.addEventListener('click', e => {
+    e.preventDefault();
+    const reviewsBtn = document.querySelector('[data-tab="reviews"]');
+    reviewsBtn?.click();
+    document.getElementById('tab-reviews')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  /* Star picker in review form */
+  const starPick = document.getElementById('starPick');
+  const ratingInput = document.getElementById('ratingInput');
+  if (starPick) {
+    const btns = starPick.querySelectorAll('.star-pick__btn');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = +btn.dataset.val;
+        if (ratingInput) ratingInput.value = val;
+        btns.forEach((b, i) => b.classList.toggle('active', i < val));
+      });
+      btn.addEventListener('mouseenter', () => {
+        const val = +btn.dataset.val;
+        btns.forEach((b, i) => b.style.color = i < val ? '#e8a020' : '');
+      });
+    });
+    starPick.addEventListener('mouseleave', () => {
+      const cur = +ratingInput?.value || 0;
+      btns.forEach((b, i) => b.style.color = i < cur ? '#e8a020' : '');
+    });
+  }
+
+  /* Review form submit */
+  document.getElementById('reviewForm')?.addEventListener('submit', e => {
+    e.preventDefault();
+    const rating = document.getElementById('ratingInput')?.value;
+    const text   = document.getElementById('reviewText')?.value;
+    if (!rating) { alert('Пожалуйста, выберите оценку'); return; }
+    if (!text)   { alert('Пожалуйста, напишите отзыв'); return; }
+    alert('Спасибо! Ваш отзыв отправлен на модерацию.');
+    e.target.reset();
+    document.querySelectorAll('.star-pick__btn').forEach(b => b.classList.remove('active'));
+  });
+
   /* ============================================================
      CART PAGE
   ============================================================ */

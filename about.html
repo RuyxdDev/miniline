@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О нас — MINILINE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header__inner">
+      <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__links">
+        <a href="catalog.html">Каталог</a>
+        <a href="shop.html">Новинки</a>
+        <a href="about.html" style="color:var(--text-primary)">О нас</a>
+        <a href="delivery.html">Доставка</a>
+      </nav>
+      <a href="index.html" class="logo">Miniline</a>
+      <div class="nav__actions">
+        <a href="#" class="nav__icon-btn" aria-label="Поиск">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="account.html" class="nav__icon-btn" aria-label="Аккаунт">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="cart.html" class="nav__icon-btn" aria-label="Корзина">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.7"/><path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#">Поиск</a>
+        <a href="account.html">Аккаунт</a>
+        <a href="cart.html">Корзина&thinsp;(0)</a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="navClose">Закрыть</button>
+    <div class="mobile-nav__links">
+      <a href="catalog.html">Каталог</a>
+      <a href="shop.html">Новинки</a>
+      <a href="about.html">О нас</a>
+      <a href="delivery.html">Доставка</a>
+    </div>
+    <div class="mobile-nav__actions">
+      <a href="account.html">Аккаунт</a>
+      <a href="cart.html">Корзина (0)</a>
+    </div>
+  </nav>
+
+  <main class="about-page">
+
+    <nav class="breadcrumb">
+      <a href="index.html" class="breadcrumb__item">Главная</a>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__item breadcrumb__item--active">О нас</span>
+    </nav>
+
+    <!-- Hero -->
+    <div class="about-hero">
+      <div class="about-hero__content">
+        <p class="about-hero__eyebrow">Краснодар — одежда с вышивкой</p>
+        <h1 class="about-hero__title">Стиль<br>и качество</h1>
+        <p class="about-hero__sub">MINILINE — авторская одежда с вышивкой. Работаем официально, доставляем по всей России бесплатно, принимаем возврат в течение 7 дней.</p>
+        <a href="catalog.html" class="btn btn--dark" style="margin-top:24px;display:inline-block">В каталог</a>
+      </div>
+      <div class="about-hero__img-wrap">
+        <img class="about-hero__img" src="https://images.pexels.com/photos/28996386/pexels-photo-28996386.jpeg?auto=compress&cs=tinysrgb&w=900&dpr=1" alt="MINILINE" loading="eager">
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="about-stats">
+      <div class="about-stat">
+        <span class="about-stat__num">500+</span>
+        <span class="about-stat__label">отзывов в Instagram</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat__num">400+</span>
+        <span class="about-stat__label">отзывов на Wildberries</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat__num">4 дня</span>
+        <span class="about-stat__label">стандартное производство</span>
+      </div>
+      <div class="about-stat">
+        <span class="about-stat__num">2 дня</span>
+        <span class="about-stat__label">срочный заказ</span>
+      </div>
+    </div>
+
+    <!-- Trust / Guarantees -->
+    <div class="about-trust">
+      <div class="about-trust__head">
+        <p class="about-trust__eyebrow">Прозрачность и надёжность</p>
+        <h2 class="about-trust__title">Почему нам можно доверять?</h2>
+      </div>
+      <div class="about-trust__grid">
+
+        <div class="trust-card">
+          <span class="trust-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7l-9-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 class="trust-card__title">Официальная регистрация</h3>
+          <p class="trust-card__text">Владелец официально зарегистрирован как ИП. Данные находятся в публичном доступе — ознакомиться можно в разделе «Публичная оферта» на сайте или во ВКонтакте.</p>
+        </div>
+
+        <div class="trust-card">
+          <span class="trust-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.6"/></svg>
+          </span>
+          <h3 class="trust-card__title">Оплата на сайте</h3>
+          <p class="trust-card__text">Государственная онлайн-оплата подключается только после подтверждения личности владельца и проверки документации. Оплачивая на сайте, вы защищены государством.</p>
+        </div>
+
+        <div class="trust-card">
+          <span class="trust-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 class="trust-card__title">Более 900 реальных отзывов</h3>
+          <p class="trust-card__text">В Instagram @miniline_shop — свыше 500 отзывов в актуальных. На Wildberries — свыше 400. В каждом отзыве виден ник — вы можете перейти в аккаунт и убедиться в реальности человека.</p>
+        </div>
+
+        <div class="trust-card">
+          <span class="trust-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 class="trust-card__title">Wildberries</h3>
+          <p class="trust-card__text">На Wildberries невозможно удалить, отредактировать или скрыть отзывы — их подлинность гарантирована платформой. Также можно сделать заказ с оплатой при получении.</p>
+        </div>
+
+        <div class="trust-card">
+          <span class="trust-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </span>
+          <h3 class="trust-card__title">Кассовый чек и оферта</h3>
+          <p class="trust-card__text">После оплаты онлайн вы получаете кассовый чек на email согласно ФЗ №54. Публичная оферта является дополнительной юридической гарантией по ст. 435 ГК РФ.</p>
+        </div>
+
+        <div class="trust-card">
+          <span class="trust-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M9 14l-4-4 4-4M15 10l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <h3 class="trust-card__title">Обмен и возврат</h3>
+          <p class="trust-card__text">Покупатель вправе вернуть или обменять товар в течение 7 дней с момента получения посылки согласно Закону РФ №2300-1 «О защите прав потребителей».</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="about-faq">
+      <div class="about-faq__head">
+        <p class="about-trust__eyebrow">Ответы на вопросы</p>
+        <h2 class="about-trust__title">Часто задаваемые вопросы</h2>
+      </div>
+      <div class="content-accordion about-faq__accordion">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            Могу ли я заказать вышивку с картинкой не из каталога?
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-body" hidden>
+            <p>Да! Для этого свяжитесь с нами в сообщениях <a href="https://instagram.com/miniline_shop/" class="form-link" target="_blank">Instagram</a>, <a href="https://t.me/miniline_shop" class="form-link" target="_blank">Telegram</a> или <a href="https://vk.com/miniline_shop" class="form-link" target="_blank">ВКонтакте</a> — обсудим детали и согласуем макет.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            Что такое срочное изготовление?
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-body" hidden>
+            <p>«Срочный заказ» — заказ, который отправляется через 2 дня после оформления. Стандартный срок — до 4 рабочих дней, не считая день оформления заказа.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            Когда я получу заказ?
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-body" hidden>
+            <p>Стандартный срок изготовления — до 4 дней (не считая день оформления). После отправки срок доставки зависит от службы доставки и вашего региона.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            Как подобрать размер?
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-body" hidden>
+            <p>Воспользуйтесь «Размерной таблицей», которая размещена на странице каждого товара. Если сомневаетесь — напишите нам, поможем подобрать.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            Какая стоимость доставки?
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-body" hidden>
+            <p>По России — <strong>бесплатно!</strong> Если вы находитесь в другой стране — уточните ваш город и страну в сообщениях Instagram, Telegram или ВКонтакте, и мы назовём точную стоимость.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            Возникла проблема с товаром. Что делать?
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-body" hidden>
+            <p>Свяжитесь с нами в сообщениях <a href="https://instagram.com/miniline_shop/" class="form-link" target="_blank">Instagram</a>, <a href="https://t.me/miniline_shop" class="form-link" target="_blank">Telegram</a> или <a href="https://vk.com/miniline_shop" class="form-link" target="_blank">ВКонтакте</a> — решим вопрос в кратчайшие сроки.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            Могу ли я обменять или вернуть товар?
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-body" hidden>
+            <p>Да, в течение <strong>7 дней</strong> с момента получения посылки. Если возврат осуществляется не из-за брака по вине продавца, доставку оплачивает покупатель.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false">
+            Как отследить заказ?
+            <span class="accordion-icon"></span>
+          </button>
+          <div class="accordion-body" hidden>
+            <p>Как только заказ будет отправлен, вам придёт трек-номер на электронную почту. По нему можно отследить посылку в приложении или на сайте курьерской компании. Также доступно отслеживание через личный кабинет на сайте.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="about-cta">
+      <h2 class="about-cta__title">Готовы носить MINILINE?</h2>
+      <div class="about-cta__btns">
+        <a href="catalog.html" class="btn btn--dark">В каталог</a>
+        <a href="https://t.me/miniline_shop" class="btn btn--light" style="border:1.5px solid var(--border)" target="_blank" rel="noopener">Написать нам</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <p class="footer__brand-name">Miniline</p>
+        <p class="footer__brand-desc">Авторская одежда с вышивкой из Краснодара.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/miniline_shop/" class="footer__social" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://t.me/miniline_shop" class="footer__social" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://vk.com/miniline_shop" class="footer__social" target="_blank" rel="noopener">ВКонтакте</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Магазин</p>
+        <ul class="footer__col-links">
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="shop.html">Новинки</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Помощь</p>
+        <ul class="footer__col-links">
+          <li><a href="delivery.html">Доставка и возврат</a></li>
+          <li><a href="mailto:mini-line@mail.ru">mini-line@mail.ru</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 MINILINE. ИП Желязков М.Д. Все права защищены.</span>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

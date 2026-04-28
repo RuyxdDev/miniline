@@ -6,30 +6,44 @@
   <title>«But Why? Mountains» Оверсайз — MINILINE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <!-- WP: body_class() → woocommerce-page single-product -->
 <body>
 
   <!-- WP: get_template_part('template-parts/header') -->
-  <header class="header" id="header">
+<header class="header" id="header">
     <div class="header__inner">
+
+      <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+
       <nav class="nav__links">
         <a href="catalog.html">Каталог</a>
         <a href="shop.html">Новинки</a>
-        <a href="delivery.html">О нас</a>
-        <a href="delivery.html">Размеры</a>
+        <a href="about.html">О нас</a>
+        <a href="delivery.html">Доставка</a>
       </nav>
+
       <a href="index.html" class="logo">Miniline</a>
+
       <div class="nav__actions">
+        <a href="#" class="nav__icon-btn" aria-label="Поиск">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="account.html" class="nav__icon-btn" aria-label="Аккаунт">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="cart.html" class="nav__icon-btn" aria-label="Корзина">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.7"/><path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
         <a href="#">Поиск</a>
         <a href="account.html">Аккаунт</a>
         <a href="cart.html">Корзина&thinsp;(0)</a>
-        <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
-          <span></span><span></span><span></span>
-        </button>
       </div>
+
     </div>
   </header>
   <nav class="mobile-nav" id="mobileNav">
@@ -95,6 +109,12 @@
         <p class="product-summary__cat">Унисекс · Оверсайз</p>
         <h1 class="product-summary__title">«But Why? Mountains» Оверсайз</h1>
 
+        <!-- WP: woocommerce_template_single_rating() → wc_get_rating_html() -->
+        <div class="product-summary__rating">
+          <div class="star-rating" aria-label="4.8 из 5"><span class="star-rating__fill" style="width:96%"></span></div>
+          <a href="#tab-reviews" class="product-summary__rating-link" data-tab="reviews">12 отзывов</a>
+        </div>
+
         <!-- WP: woocommerce_template_single_price() -->
         <p class="product-summary__price">2 500 ₽</p>
 
@@ -143,12 +163,13 @@
           </p>
         </div>
 
-        <!-- WP: woocommerce_product_tab_panels() simplified -->
+        <!-- WP: woocommerce_product_tab_panels() → tabs/description.php, reviews.php -->
         <div class="product-tabs">
           <div class="product-tabs__nav">
             <button class="product-tab-btn product-tab-btn--active" data-tab="desc">Описание</button>
             <button class="product-tab-btn" data-tab="care">Уход</button>
             <button class="product-tab-btn" data-tab="delivery">Доставка</button>
+            <button class="product-tab-btn" data-tab="reviews">Отзывы <span class="product-tab-count">12</span></button>
           </div>
           <div class="product-tab-panel" id="tab-desc">
             <p>Оверсайз-футболка с оригинальным принтом «But Why? Mountains» из коллекции MINILINE. 100% хлопок (плотность 220 г/м²). Свободный крой, удлинённая спинка, дроп-шоулдер.</p>
@@ -218,6 +239,139 @@
             <p class="product-card__price">2 200 ₽</p>
             <a href="product.html" class="product-card__buy">Купить</a>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================
+         Reviews Section
+         WP: comments_template() → woocommerce/single-product-reviews.php
+    ====================================================== -->
+    <div class="product-reviews-section" id="reviews">
+      <div class="product-reviews-inner">
+
+        <div class="product-reviews-head">
+          <h2 class="product-reviews-head__title">Отзывы покупателей</h2>
+          <div class="product-reviews-head__rating">
+            <span class="product-reviews-head__num">4.8</span>
+            <div class="star-rating" aria-label="4.8 из 5">
+              <span class="star-rating__fill" style="width:96%"></span>
+            </div>
+            <span class="product-reviews-head__count">12 отзывов</span>
+          </div>
+        </div>
+
+        <div class="product-reviews-layout">
+
+          <!-- Левая колонка: сводка + форма -->
+          <div class="product-reviews-aside">
+            <div class="reviews-summary reviews-summary--compact">
+              <div class="reviews-summary__bars">
+                <div class="rating-bar"><span>5 ★</span><div class="rating-bar__track"><div class="rating-bar__fill" style="width:75%"></div></div><span>9</span></div>
+                <div class="rating-bar"><span>4 ★</span><div class="rating-bar__track"><div class="rating-bar__fill" style="width:17%"></div></div><span>2</span></div>
+                <div class="rating-bar"><span>3 ★</span><div class="rating-bar__track"><div class="rating-bar__fill" style="width:8%"></div></div><span>1</span></div>
+                <div class="rating-bar"><span>2 ★</span><div class="rating-bar__track"><div class="rating-bar__fill" style="width:0%"></div></div><span>0</span></div>
+                <div class="rating-bar"><span>1 ★</span><div class="rating-bar__track"><div class="rating-bar__fill" style="width:0%"></div></div><span>0</span></div>
+              </div>
+            </div>
+
+            <div class="review-form-wrap">
+              <h3 class="review-form__title">Оставить отзыв</h3>
+              <p class="review-form__note">Только покупатели могут оставлять отзывы. <a href="account.html" class="product-meta__link">Войдите</a> в аккаунт.</p>
+              <form class="review-form" id="reviewForm" novalidate>
+                <div class="review-form__rating-pick">
+                  <span class="review-form__rating-label">Ваша оценка</span>
+                  <div class="star-pick" id="starPick" role="radiogroup" aria-label="Оценка">
+                    <button type="button" class="star-pick__btn" data-val="1" aria-label="1 звезда">★</button>
+                    <button type="button" class="star-pick__btn" data-val="2" aria-label="2 звезды">★</button>
+                    <button type="button" class="star-pick__btn" data-val="3" aria-label="3 звезды">★</button>
+                    <button type="button" class="star-pick__btn" data-val="4" aria-label="4 звезды">★</button>
+                    <button type="button" class="star-pick__btn" data-val="5" aria-label="5 звёзд">★</button>
+                  </div>
+                  <input type="hidden" name="rating" id="ratingInput" value="">
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="reviewName">Имя</label>
+                  <input class="form-input" type="text" id="reviewName" name="author" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="reviewEmail">Email</label>
+                  <input class="form-input" type="email" id="reviewEmail" name="email" placeholder="your@email.ru" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="reviewText">Отзыв</label>
+                  <textarea class="form-input form-textarea" id="reviewText" name="comment" rows="4" placeholder="Расскажите о товаре..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn--dark" style="width:100%">Отправить отзыв</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Правая колонка: лента отзывов -->
+          <ol class="commentlist woocommerce-Reviews-comments">
+
+            <li class="review woocommerce-review comment">
+              <div class="review-avatar" style="background:#5c4a3a">А</div>
+              <div class="review-body">
+                <div class="review-head">
+                  <span class="review-author">Алина К.</span>
+                  <div class="star-rating" aria-label="5 из 5"><span class="star-rating__fill" style="width:100%"></span></div>
+                  <time class="review-date" datetime="2026-04-10">10 апреля 2026</time>
+                </div>
+                <p class="review-text">Заказывала размер M — сидит идеально оверсайз, как и хотела. Качество ткани приятное, вышивка чёткая, нитки не торчат. Доставка пришла за 3 дня. Однозначно буду брать ещё!</p>
+              </div>
+            </li>
+
+            <li class="review woocommerce-review comment">
+              <div class="review-avatar" style="background:#3a4a5c">М</div>
+              <div class="review-body">
+                <div class="review-head">
+                  <span class="review-author">Михаил Г.</span>
+                  <div class="star-rating" aria-label="5 из 5"><span class="star-rating__fill" style="width:100%"></span></div>
+                  <time class="review-date" datetime="2026-04-02">2 апреля 2026</time>
+                </div>
+                <p class="review-text">Брал себе и подруге — оба довольны. Цвет на фото соответствует реальному. Размер XL — немного великоват, но это и есть оверсайз, так что норм.</p>
+              </div>
+            </li>
+
+            <li class="review woocommerce-review comment">
+              <div class="review-avatar" style="background:#4a5c3a">Д</div>
+              <div class="review-body">
+                <div class="review-head">
+                  <span class="review-author">Дарья П.</span>
+                  <div class="star-rating" aria-label="4 из 5"><span class="star-rating__fill" style="width:80%"></span></div>
+                  <time class="review-date" datetime="2026-03-21">21 марта 2026</time>
+                </div>
+                <p class="review-text">Очень нравится принт, выглядит дорого. Минус один — немного долго шла доставка, 6 дней. Но сам товар на 5.</p>
+              </div>
+            </li>
+
+            <li class="review woocommerce-review comment">
+              <div class="review-avatar" style="background:#5c3a4a">С</div>
+              <div class="review-body">
+                <div class="review-head">
+                  <span class="review-author">Светлана В.</span>
+                  <div class="star-rating" aria-label="5 из 5"><span class="star-rating__fill" style="width:100%"></span></div>
+                  <time class="review-date" datetime="2026-03-15">15 марта 2026</time>
+                </div>
+                <p class="review-text">Уже третья покупка в MINILINE — всё всегда отлично. Вышивка держится хорошо после многократных стирок. Рекомендую всем!</p>
+              </div>
+            </li>
+
+            <li class="review woocommerce-review comment">
+              <div class="review-avatar" style="background:#3a5c4a">К</div>
+              <div class="review-body">
+                <div class="review-head">
+                  <span class="review-author">Кирилл Н.</span>
+                  <div class="star-rating" aria-label="5 из 5"><span class="star-rating__fill" style="width:100%"></span></div>
+                  <time class="review-date" datetime="2026-03-08">8 марта 2026</time>
+                </div>
+                <p class="review-text">Подарил девушке на 8 марта — в восторге! Упаковка аккуратная, внутри открытка. Размер S — точно как на таблице.</p>
+              </div>
+            </li>
+
+          </ol>
+
         </div>
       </div>
     </div>
