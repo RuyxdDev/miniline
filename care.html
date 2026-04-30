@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Уход за вещами — MINILINE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="header" id="header">
+    <div class="header__inner">
+
+      <button class="nav__burger" id="burgerBtn" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__links">
+        <div class="nav__item" id="navClothes">
+          <button class="nav__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Одежда
+            <svg class="nav__dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="nav__dropdown" role="menu">
+            <div class="nav__dropdown-col">
+              <a href="shop.html?sort=new" class="nav__dropdown-link nav__dropdown-link--featured">Новинки</a>
+              <a href="shop.html?sort=popular" class="nav__dropdown-link nav__dropdown-link--featured">Популярное</a>
+              <a href="shop.html?sale=1" class="nav__dropdown-link nav__dropdown-link--sale">Распродажа</a>
+            </div>
+            <div class="nav__dropdown-col">
+              <p class="nav__dropdown-heading">Одежда с вышивкой</p>
+              <a href="shop.html?cat=embroidery" class="nav__dropdown-link">Все</a>
+              <a href="shop.html?cat=tshirt-light" class="nav__dropdown-link">Футболки классические</a>
+              <a href="shop.html?cat=tshirt-oversize" class="nav__dropdown-link">Оверсайз плотные</a>
+              <a href="shop.html?cat=tshirt-varenko" class="nav__dropdown-link">Оверсайз вареные</a>
+              <a href="shop.html?cat=hoodie-unisex" class="nav__dropdown-link">Худи и свитшоты</a>
+              <a href="shop.html?cat=pair" class="nav__dropdown-link">Парная одежда</a>
+            </div>
+            <div class="nav__dropdown-col">
+              <p class="nav__dropdown-heading">Женская одежда</p>
+              <a href="shop.html?cat=dresses" class="nav__dropdown-link">Платья</a>
+              <a href="shop.html?cat=tops" class="nav__dropdown-link">Топы</a>
+              <a href="shop.html?cat=longsleeve" class="nav__dropdown-link">Лонгсливы</a>
+              <a href="shop.html?cat=hoodie-women" class="nav__dropdown-link">Худи</a>
+              <a href="shop.html?cat=other-women" class="nav__dropdown-link">Другое</a>
+            </div>
+            <div class="nav__dropdown-col">
+              <p class="nav__dropdown-heading">Мужская одежда</p>
+              <a href="shop.html?cat=men-tshirt" class="nav__dropdown-link">Футболки и майки</a>
+            </div>
+          </div>
+        </div>
+        <a href="gift.html" class="nav__link">Подарочные сертификаты</a>
+        <a href="returns.html" class="nav__link">Обмен и возврат</a>
+        <a href="care.html" class="nav__link">Уход за вещами</a>
+        <a href="about.html" class="nav__link">О нас</a>
+      </nav>
+
+      <a href="index.html" class="logo">Miniline</a>
+
+      <div class="nav__actions">
+        <a href="#" class="nav__icon-btn" aria-label="Поиск">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.7"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="account.html" class="nav__icon-btn" aria-label="Аккаунт">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="cart.html" class="nav__icon-btn" aria-label="Корзина">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.7"/><path d="M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#">Поиск</a>
+        <a href="account.html">Аккаунт</a>
+        <a href="cart.html">Корзина&thinsp;(0)</a>
+      </div>
+
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="navClose">Закрыть</button>
+    <div class="mobile-nav__links">
+
+      <div class="mobile-nav__section" id="mobileClothes">
+        <button class="mobile-nav__section-toggle" aria-expanded="false">
+          Одежда
+          <svg class="mobile-nav__toggle-arrow" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mobile-nav__section-body" hidden>
+          <a href="shop.html?sort=new" class="mobile-nav__sub mobile-nav__sub--featured">Новинки</a>
+          <a href="shop.html?sort=popular" class="mobile-nav__sub mobile-nav__sub--featured">Популярное</a>
+          <p class="mobile-nav__sub-heading">Одежда с вышивкой (унисекс)</p>
+          <a href="shop.html?cat=embroidery" class="mobile-nav__sub mobile-nav__sub--indent">Все</a>
+          <a href="shop.html?cat=tshirt-light" class="mobile-nav__sub mobile-nav__sub--indent">Футболки классические лёгкие</a>
+          <a href="shop.html?cat=tshirt-oversize" class="mobile-nav__sub mobile-nav__sub--indent">Футболки оверсайз плотные</a>
+          <a href="shop.html?cat=tshirt-varenko" class="mobile-nav__sub mobile-nav__sub--indent">Футболки оверсайз вареные</a>
+          <a href="shop.html?cat=hoodie-unisex" class="mobile-nav__sub mobile-nav__sub--indent">Худи и свитшоты</a>
+          <a href="shop.html?cat=pair" class="mobile-nav__sub mobile-nav__sub--indent">Парная одежда</a>
+          <p class="mobile-nav__sub-heading">Женская одежда</p>
+          <a href="shop.html?cat=dresses" class="mobile-nav__sub mobile-nav__sub--indent">Платья</a>
+          <a href="shop.html?cat=tops" class="mobile-nav__sub mobile-nav__sub--indent">Топы</a>
+          <a href="shop.html?cat=longsleeve" class="mobile-nav__sub mobile-nav__sub--indent">Лонгсливы</a>
+          <a href="shop.html?cat=hoodie-women" class="mobile-nav__sub mobile-nav__sub--indent">Худи</a>
+          <a href="shop.html?cat=other-women" class="mobile-nav__sub mobile-nav__sub--indent">Другое</a>
+          <p class="mobile-nav__sub-heading">Мужская одежда</p>
+          <a href="shop.html?cat=men-tshirt" class="mobile-nav__sub mobile-nav__sub--indent">Футболки и майки</a>
+          <a href="shop.html?sale=1" class="mobile-nav__sub mobile-nav__sub--sale">Распродажа</a>
+        </div>
+      </div>
+
+      <a href="gift.html" class="mobile-nav__links-item">Подарочные сертификаты</a>
+      <a href="returns.html" class="mobile-nav__links-item">Обмен и возврат</a>
+      <a href="care.html" class="mobile-nav__links-item">Уход за вещами</a>
+      <a href="about.html" class="mobile-nav__links-item">О нас</a>
+      <a href="account.html" class="mobile-nav__links-item">Личный кабинет</a>
+
+    </div>
+    <div class="mobile-nav__actions">
+      <a href="account.html">Аккаунт</a>
+      <a href="cart.html">Корзина (0)</a>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <nav class="breadcrumb">
+      <a href="index.html" class="breadcrumb__item">Главная</a>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__item breadcrumb__item--active">Уход за вещами</span>
+    </nav>
+    <div class="content-page__layout">
+      <div class="content-body">
+        <section class="content-section">
+          <h1 class="content-section__title">Уход за вещами</h1>
+          <div class="content-accordion">
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="true">Стирка<span class="accordion-icon"></span></button>
+              <div class="accordion-body"><p>Стирать при температуре <strong>не выше 30°C</strong>, деликатный режим или ручная стирка. Не отбеливать. Не использовать агрессивные моющие средства.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">Сушка<span class="accordion-icon"></span></button>
+              <div class="accordion-body" hidden><p>Сушить в расправленном виде на горизонтальной поверхности. Не выжимать — это может деформировать вышивку. Не сушить в барабанной сушилке.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">Глажка<span class="accordion-icon"></span></button>
+              <div class="accordion-body" hidden><p>Гладить при низкой температуре через влажную ткань или с изнаночной стороны. <strong>Не гладить по вышивке</strong> — это может повредить нити.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">Хранение<span class="accordion-icon"></span></button>
+              <div class="accordion-body" hidden><p>Хранить в сложенном виде или на вешалке в прохладном сухом месте. Избегать воздействия прямых солнечных лучей — цвета могут выцвести.</p></div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion-trigger" aria-expanded="false">Уход за вышивкой<span class="accordion-icon"></span></button>
+              <div class="accordion-body" hidden><p>Вышивка рассчитана на долгую носку при правильном уходе. Не тяните нити вышивки. При появлении затяжек аккуратно заправьте нить с изнаночной стороны иглой.</p></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <p class="footer__brand-name">Miniline</p>
+        <p class="footer__brand-desc">Авторская одежда с вышивкой из Краснодара.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/miniline_shop/" class="footer__social" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://t.me/miniline_shop" class="footer__social" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://vk.com/miniline_shop" class="footer__social" target="_blank" rel="noopener">ВКонтакте</a>
+        </div>
+      </div>
+      <div>
+        <p class="footer__col-title">Магазин</p>
+        <ul class="footer__col-links">
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="shop.html">Все товары</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__col-title">Помощь</p>
+        <ul class="footer__col-links">
+          <li><a href="returns.html">Обмен и возврат</a></li>
+          <li><a href="care.html">Уход за вещами</a></li>
+          <li><a href="mailto:mini-line@mail.ru">mini-line@mail.ru</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 MINILINE. Все права защищены.</span>
+      <div class="footer__legal">
+        <a href="#">Обработка персональных данных</a>
+        <a href="#">Пользовательское соглашение</a>
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Публичная оферта</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

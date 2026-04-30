@@ -5,6 +5,23 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  const legalWrap = document.querySelector('.footer__legal');
+  if (legalWrap) {
+    const legalItems = [
+      { href: '#', text: 'Обработка персональных данных' },
+      { href: '#', text: 'Пользовательское соглашение' }
+    ];
+    legalItems.forEach(item => {
+      const exists = Array.from(legalWrap.querySelectorAll('a')).some(link => link.textContent?.trim() === item.text);
+      if (!exists) {
+        const link = document.createElement('a');
+        link.href = item.href;
+        link.textContent = item.text;
+        legalWrap.appendChild(link);
+      }
+    });
+  }
+
   /* --- Header shadow on scroll --- */
   const header = document.getElementById('header');
   if (header) {
@@ -34,6 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileNav) mobileNav.addEventListener('click', e => { if (e.target === mobileNav) closeNav(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNav(); });
 
+  const mobileClothesToggle = document.getElementById('mobileClothesToggle');
+  const mobileClothesMenu = document.getElementById('mobileClothesMenu');
+  if (mobileClothesToggle && mobileClothesMenu) {
+    mobileClothesToggle.setAttribute('aria-expanded', 'false');
+    mobileClothesMenu.hidden = true;
+    mobileClothesToggle.addEventListener('click', () => {
+      const expanded = mobileClothesToggle.getAttribute('aria-expanded') === 'true';
+      mobileClothesToggle.setAttribute('aria-expanded', String(!expanded));
+      mobileClothesMenu.hidden = expanded;
+    });
+  }
+
   /* --- Wishlist toggle (product cards) --- */
   document.querySelectorAll('.product-card__wish').forEach(btn => {
     btn.addEventListener('click', e => {
@@ -42,6 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.textContent = liked ? '♡' : '♥';
       btn.style.color  = liked ? '' : '#e05555';
     });
+  });
+
+  /* Product card interactions */
+  document.querySelectorAll('.product-card').forEach(card => {
+    const productLink = card.querySelector('.product-card__buy');
+    const imageArea = card.querySelector('.product-card__image');
+    if (productLink && imageArea) {
+      const targetHref = productLink.getAttribute('href') || 'product.html';
+      imageArea.addEventListener('click', () => {
+        window.location.href = targetHref;
+      });
+      imageArea.style.cursor = 'pointer';
+    }
   });
 
   /* ============================================================

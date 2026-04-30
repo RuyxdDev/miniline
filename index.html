@@ -6,7 +6,7 @@
   <title>MINILINE — Стиль и качество</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -52,11 +52,36 @@
   <nav class="mobile-nav" id="mobileNav">
     <button class="mobile-nav__close" id="navClose">Закрыть</button>
     <div class="mobile-nav__links">
-      <a href="catalog.html">Каталог</a>
-      <a href="shop.html">Новинки</a>
-      <a href="delivery.html">О нас</a>
-      <a href="delivery.html">Размеры</a>
-      <a href="delivery.html">Доставка</a>
+      <div class="mobile-nav__item mobile-nav__item--dropdown">
+        <button type="button" class="mobile-nav__toggle" id="mobileClothesToggle" aria-expanded="false">
+          Одежда
+        </button>
+        <div class="mobile-nav__submenu" id="mobileClothesMenu" hidden>
+          <a href="shop.html">Новинки</a>
+          <a href="shop.html">Популярное</a>
+          <a href="shop.html">Одежда с вышивкой (унисекс)</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Все</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Футболки Классические легкие</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Футболки Оверсайз Плотные</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Футболки Оверсайз Вареные</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Худи и свитшоты</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Парная одежда</a>
+          <a href="shop.html">Женская одежда</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Платья</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Топы</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Лонгсливы</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Худи</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Другое</a>
+          <a href="shop.html">Мужская одежда</a>
+          <a href="shop.html" class="mobile-nav__sub-link">Футболки и майки</a>
+          <a href="shop.html">Распродажа</a>
+        </div>
+      </div>
+      <a href="gift.html">Подарочные сертификаты</a>
+      <a href="returns.html">Обмен и возврат</a>
+      <a href="care.html">Уход за вещами</a>
+      <a href="about.html">О нас</a>
+      <a href="account.html">Личный кабинет</a>
     </div>
     <div class="mobile-nav__actions">
       <a href="#">Поиск</a>
